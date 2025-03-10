@@ -1,0 +1,423 @@
+drug,category,generic name
+abemaciclib,Metastatic / Inoperable,abemaciclib
+abiraterone,Metastatic / Inoperable & Adjuvant,abiraterone
+abiraterone acetate,Metastatic / Inoperable & Adjuvant,abiraterone
+abraxane,Metastatic / Inoperable & Adjuvant,paclitaxel
+acalabrutinib,Metastatic / Inoperable,acalabrutinib
+adcetris,Metastatic / Inoperable & Adjuvant,brentuximab
+ado-trastuzumab emtansine,Metastatic / Inoperable,trastuzumab
+adriamycin,Standard,adriamycin
+afatinib,Metastatic / Inoperable,afatinib
+afatinib dimaleate,Metastatic / Inoperable,afatinib
+afinitor,Metastatic / Inoperable & Adjuvant,everolimus
+aflibercept,Metastatic / Inoperable & Adjuvant,aflibercept
+alecensa,Metastatic / Inoperable,alectinib
+alectinib,Metastatic / Inoperable,alectinib
+alectinib hcl,Metastatic / Inoperable,alectinib
+alemtuzumab,Metastatic / Inoperable & Adjuvant,alemtuzumab
+alkeran,Metastatic / Inoperable & Adjuvant,melphalan
+alpelisib,Metastatic / Inoperable,alpelisib
+altretamine,,altretamine
+anast,Standard,anastrozole
+anastrozole,Standard,anastrozole
+apalutamide,Metastatic / Inoperable,apalutamide
+ara-cml,,aracytabine
+aracytabine,,aracytabine
+arimidex,Standard,anastrozole
+aromasin,Metastatic / Inoperable & Adjuvant,exemestane
+arsen,Metastatic / Inoperable & Adjuvant,arsenic
+arsenic,Metastatic / Inoperable & Adjuvant,arsenic
+arsenic trioxide,Metastatic / Inoperable & Adjuvant,arsenic
+arsenso,Metastatic / Inoperable & Adjuvant,arsenso
+arzerra,Standard,ofatumumab
+asparaginase,Standard,asparaginase
+atezolizumab,Metastatic / Inoperable,atezolizumab
+atezolizumab infusion,Metastatic / Inoperable,atezolizumab
+avastin,Metastatic / Inoperable,bevacizumab
+axitinib,Metastatic / Inoperable,axitinib
+azaci,Standard,azacitidine
+azacitidine,Standard,azacitidine
+azainj,Metastatic / Inoperable & Adjuvant,azainj
+bacillus calmette-guerin,Standard,bcg
+basiliximab,Metastatic / Inoperable & Adjuvant,basiliximab
+bcg,Standard,bcg
+bendamustine,Metastatic / Inoperable & Adjuvant,bendamustine
+bendamustine hcl,Metastatic / Inoperable & Adjuvant,bendamustine
+beva,Metastatic / Inoperable,bevacizumab
+bevac,Metastatic / Inoperable,bevacizumab
+bevacizumab,Metastatic / Inoperable,bevacizumab
+bexarotene,Metastatic / Inoperable & Adjuvant,bexarotene
+bical,Metastatic / Inoperable,bicalutamide
+bicalutamide,Metastatic / Inoperable,bicalutamide
+binimetinib,,binimetinib
+bleomycin,Metastatic / Inoperable & Adjuvant,bleomycin
+blina,Metastatic / Inoperable & Adjuvant,blinatumomab
+blinatumomab,Metastatic / Inoperable & Adjuvant,blinatumomab
+borte,Metastatic / Inoperable & Adjuvant,bortezomib
+bortezomib,Metastatic / Inoperable & Adjuvant,bortezomib
+bosulif,Standard,bosulif
+bosutinib,Metastatic / Inoperable & Adjuvant,bosutinib
+brentuximab vedotin,Metastatic / Inoperable & Adjuvant,brentuximab
+busulfan,Metastatic / Inoperable & Adjuvant,busulfan
+busulso,Standard,busulso
+cabazitaxel,Metastatic / Inoperable & Adjuvant,cabazitaxel
+cabazitaxel infusion,Metastatic / Inoperable & Adjuvant,cabazitaxel
+cabazitaxel infusion titration,Metastatic / Inoperable & Adjuvant,cabazitaxel
+cabometyx,Metastatic / Inoperable,cabozantinib
+cabozantinib,Metastatic / Inoperable,cabozantinib
+cabozantinib s-malate,Metastatic / Inoperable,cabozantinib
+calquence,Metastatic / Inoperable,acalabrutinib
+campath,Standard,alemtuzumab
+camptosar,Metastatic / Inoperable,camptosar
+capecitabine,Metastatic / Inoperable & Adjuvant,capecitabine
+carac,Standard,fluorouracil
+carbo,Metastatic / Inoperable,carboplatin
+carboplatin,Metastatic / Inoperable,carboplatin
+carfilzomib,Metastatic / Inoperable & Adjuvant,carfilzomib
+carmu,Metastatic / Inoperable & Adjuvant,carmustine
+carmustine,Metastatic / Inoperable & Adjuvant,carmustine
+casodex,Metastatic / Inoperable,bicalutamide
+cetuximab,Metastatic / Inoperable,cetuximab
+chlorambucil,Metastatic / Inoperable & Adjuvant,chlorambucil
+cispl,Metastatic / Inoperable,cisplatin
+cisplatin,Metastatic / Inoperable,cisplatin
+cispls,Metastatic / Inoperable,cisplatin
+cladribine,Standard,cladribine
+cobimetinib,Metastatic / Inoperable,cobimetinib
+cobimetinib fumarate,Metastatic / Inoperable,cobimetinib
+crizotinib,Metastatic / Inoperable,crizotinib
+cyclo,Metastatic / Inoperable & Adjuvant,cyclophosphamide
+cyclophosphamide,Metastatic / Inoperable & Adjuvant,cyclophosphamide
+cytar,Metastatic / Inoperable & Adjuvant,cytarabine
+cytarabine,Metastatic / Inoperable & Adjuvant,cytarabine
+cytarabine/pf,Metastatic / Inoperable & Adjuvant,cytarabine
+cytarinjintra,Metastatic / Inoperable & Adjuvant,cytarabine
+cytoxan,Metastatic / Inoperable & Adjuvant,cyclophosphamide
+dabrafenib,Metastatic / Inoperable,dabrafenib
+dabrafenib mesylate,Metastatic / Inoperable,dabrafenib
+dacarbazine,Metastatic / Inoperable & Adjuvant,dacarbazine
+dactinomycin,Metastatic / Inoperable & Adjuvant,dactinomycin
+daratumumab,Metastatic / Inoperable & Adjuvant,daratumumab
+dasat,Metastatic / Inoperable & Adjuvant,dasatinib
+dasatinib,Metastatic / Inoperable,dasatinib
+dauno,Metatatic / Inoperable & Adjuvant,daunorubicin
+daunorubicin,Metastatic / Inoperable & Adjuvant,daunorubicin
+daunorubicin hcl,Metastatic / Inoperable & Adjuvant,daunorubicin
+decitabine,Metastatic / Inoperable & Adjuvant,decitabine
+degarelix,Metastatic / Inoperable & Adjuvant,degarelix
+degarelix acetate,Metastatic / Inoperable & Adjuvant,degarelix
+denileukin,Metatatic / Inoperable,denileukin
+dexrazoxane,Metastatic / Inoperable & Adjuvant,dexrazoxane
+diclofenac-fluorouracil,Standard,diclofenac-fluorouracil
+doce,Metastatic / Inoperable & Adjuvant,docetaxel
+docetaxel,Metastatic / Inoperable & Adjuvant,docetaxel
+docetaxel infusion,Metastatic / Inoperable & Adjuvant,docetaxel
+docetaxel infusion (titration),Metastatic / Inoperable & Adjuvant,docetaxel
+doxil,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxlip,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxor,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxords,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxors,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxorubicin,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxorubicin hcl,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxorubicin hcl peg-liposomal,Metastatic / Inoperable & Adjuvant,doxorubicin
+doxorubicin liposomal,Metastatic / Inoperable & Adjuvant,doxorubicin
+droxia,Metastatic / Inoperable & Adjuvant,hydroxyurea
+durvalumab,Metastatic / Inoperable,durvalumab
+eculizumab,Metastatic / Inoperable & Adjuvant,eculizumab
+efudex,Metastatic / Inoperable & Adjuvant,fluorouracil
+eligard,Metastatic / Inoperable,leuprolide acetate
+elotuzumab,Metastatic / Inoperable & Adjuvant,elotuzumab
+eloxatin,Metastatic / Inoperable,oxaliplatin
+elspar,Standard,asparaginase
+emtricitabine,Metastatic / Inoperable & Adjuvant,emtricitabine
+encorafenib,,encorafenib
+enzalutamide,Metastatic / Inoperable,enzalutamide
+epirubicin,Metastatic / Inoperable & Adjuvant,epirubicin
+epirubicin hcl,Metastatic / Inoperable & Adjuvant,epirubicin
+eribulin,Metastatic / Inoperable & Adjuvant,eribulin
+eribulin mesylate,Metastatic / Inoperable & Adjuvant,eribulin
+erivedge,Metastatic / Inoperable,vismodegib
+erleada,Metastatic / Inoperable,apalutamide
+erlotinib,Metastatic / Inoperable,erlotinib
+erwinaze,Standard,asparaginase
+etopo,Metastatic / Inoperable & Adjuvant,etoposide
+etopophos,Metastatic / Inoperable & Adjuvant,etoposide
+etopophos equivalent,Metastatic / Inoperable & Adjuvant,etoposide
+etopos,Metatstatic / Inoperable & Adjuvant,etoposide
+etoposide,Metastatic / Inoperable & Adjuvant,etoposide
+etoposide phosphate,Metastatic / Inoperable & Adjuvant,etoposide
+evero,Metastatic / Inoperable & Adjuvant,everolimus
+everolimus,Metastatic / Inoperable & Adjuvant,everolimus
+evertor,Metastatic / Inoperable & Adjuvant,everolimus
+exemestane,Metastatic / Inoperable & Adjuvant,exemestane
+eylea,Metastatic / Inoperable & Adjuvant,aflibercept
+fareston,Metastatic / Inoperable & Adjuvant,toremifene citrate
+faslodex,Metastatic / Inoperable & Adjuvant,fulvestrant
+femara,Metastatic / Inoperable & Adjuvant,letrozole
+firmagon,Metastatic / Inoperable & Adjuvant,degarelix
+fluda,Standard,fludarabine
+fludarabine,Standard,fludarabine
+fludarabine phosphate,Standard,fludarabine
+fluor,Metatatic / Inoperable & Adjuvant,fluorouracil
+fluorouracil,Metastatic / Inoperable & Adjuvant,fluorouracil
+flutamide,Metastatic / Inoperable & Adjuvant,flutamide
+fulvestrant,Metastatic / Inoperable & Adjuvant,fulvestrant
+gazyva,Metastatic / Inoperable & Adjuvant,obinutuzumab
+gemcitabine,Metastatic / Inoperable & Adjuvant,gemcitabine
+gemcitabine hcl,Metastatic / Inoperable & Adjuvant,gemcitabine
+gemzar,Metastatic / Inoperable & Adjuvant,gemcitabine
+gilotrif,Metastatic / Inoperable,afatinib
+gleevec,Metastatic / Inoperable & Adjuvant,imatinib
+gleostine,Metastatic / Inoperable & Adjuvant,iomustine
+goserelin,Metastatic / Inoperable & Adjuvant,goserelin
+goserelin acetate,Metastatic / Inoperable & Adjuvant,goserelin
+herceptin,Metastatic / Inoperable & Adjuvant,trastuzumab
+histrelin,Metastatic / Inoperable & Adjuvant,histrelin
+hydrea,Metastatic / Inoperable & Adjuvant,hydroxyurea
+hydroxyurea,Metastatic / Inoperable & Adjuvant,hydroxyurea
+ibrance,Metastatic / Inoperable,palbociclib
+ibrutinib,Metastatic / Inoperable & Adjuvant,ibrutinib
+iclusig,Standard,ponatinib
+idarubicin,Metastatic / Inoperable & Adjuvant,idarubicin
+idarubicin hcl,Metastatic / Inoperable & Adjuvant,idarubicin
+idelalisib,Metastatic / Inoperable & Adjuvant,idelalisib
+ifex,Metastatic / Inoperable,ifosfamide
+ifosf,Metastatic / Inoperable,ifosfamide
+ifosfamide,Metastatic / Inoperable,ifosfamide
+ifosfamide-mesna,Metastatic / Inoperable,ifosfamide
+ifosfomide,Metastatic / Inoperable,ifosfamide
+imati,Metastatic / Inoperable & Adjuvant,imatinib
+imatinib,Metastatic / Inoperable & Adjuvant,imatinib
+imatinib mesylate,Metastatic / Inoperable & Adjuvant,imatinib
+imbruvica,Metastatic / Inoperable & Adjuvant,ibrutinib
+inlyta,Metastatic / Inoperable & Adjuvant,axitinib
+interferon alfa,Metastatic / Inoperable & Adjuvant,interferon alfa
+interferon alpha,Metastatic / Inoperable & Adjuvant,interferon alfa
+ipilimumab,Metastatic / Inoperable,ipilimumab
+iressa,Metastatic / Inoperable,gefitinib
+irino,Metastatic / Inoperable,irinotecan
+irinotecan,Metastatic / Inoperable,irinotecan
+irinotecan hcl,Metastatic / Inoperable,irinotecan
+irinotecan liposomal,Metastatic / Inoperable,irinotecan
+ivosidenib,,ivosidenib
+ixabepilone,Metastatic / Inoperable,ixabepilone
+ixazomib citrate,Standard,ixazomib
+ixempra,Metastatic / Inoperable,ixabepilone
+kadcyla,Metastatic / Inoperable,trastuzumab emtansine
+keytruda,Metastatic / Inoperable,pembrolizumab
+kisqali,Metastatic / Inoperable,ribociclib
+kyprolis,Metastatic / Inoperable & Adjuvant,carfilzomib
+lanreotide,Standard,lanreotide
+lanreotide acetate,Standard,lanreotide
+lapatinib,Metastatic / Inoperable,lapatinib
+lapatinib ditosylate,Metastatic / Inoperable,lapatinib
+larotrectinib,Metastatic / Inoperable,larotrectinib
+lenalidomide,,lenalidomide
+lenvatinib,Metastatic / Inoperable,lenvatinib
+lenvatinib mesylate,Metastatic / Inoperable,lenvatinib
+lenvima,Metastatic / Inoperable,lenvatinib
+letro,Metastatic / Inoperable & Adjuvant,letrozole
+letrozole,Metastatic / Inoperable & Adjuvant,letrozole
+leucovorin,,leucovorin
+leukeran,Metastatic / Inoperable & Adjuvant,chlorambucil
+leuprolide,Metastatic / Inoperable,leuprolide
+leuprolide 22.5 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide 30 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide 45 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide 7.5 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide acetate,Metastatic / Inoperable,leuprolide
+leuprolide acetate 22.5 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide acetate 30 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide acetate 45 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide acetate 7.5 mg subq syrg (prostate-infus ctr only),Metastatic / Inoperable,leuprolide
+leuprolide/norethindrone,Metastatic / Inoperable,leuprolide
+liposomal doxorubicin ivpb (doxil),Metastatic / Inoperable & Adjuvant,doxorubicin
+liposomal vincristine,Metastatic / Inoperable & Adjuvant,vincristine
+lomustine,Metastatic / Inoperable & Adjuvant,lomustine
+lonsurf,Metastatic / Inoperable,trifluridine/tipiracil
+lorlatinib,,lorlatinib
+lupron,Metastatic / Inoperable,leuprolide acetate
+lynparza,Metastatic / Inoperable,olaparib
+lysodren,Metastatic / Inoperable,mitotane
+mechlorethamine,Metastatic / Inoperable & Adjuvant,chlormethine
+mechlorethamine hcl,Metastatic / Inoperable & Adjuvant,chlormethine
+megace,Metastatic / Inoperable & Adjuvant,megestrol
+megestrol,Metastatic / Inoperable & Adjuvant,megestrol
+megestrol acetate,Metastatic / Inoperable & Adjuvant,megestrol
+mekinist,Metastatic / Inoperable,trametinib
+melph,Metastatic / Inoperable & Adjuvant,melphalan
+melphalan,Metastatic / Inoperable & Adjuvant,melphalan
+melphalan hcl,Metastatic / Inoperable & Adjuvant,melphalan
+mercaptopurine,Metastatic / Inoperable & Adjuvant,mercaptopurine
+mereletinib,Metastatic / Inoperable,osimertinib
+metho,Metastatic / Inoperable & Adjuvant,methotrexate
+methoinj,Metastatic / Inoperable & Adjuvant,methotrexate
+methos,Metastatic / Inoperable & Adjuvant,methotrexate
+methosubcut,Metastatic / Inoperable & Adjuvant,methotrexate
+methotrexate,Metastatic / Inoperable & Adjuvant,methotrexate
+methotrexate sodium,Metastatic / Inoperable & Adjuvant,methotrexate
+methotrexate sodium/pf,Metastatic / Inoperable & Adjuvant,methotrexate
+methotrexate/pf,Metastatic / Inoperable & Adjuvant,methotrexate
+methotrextate,Metastatic / Inoperable & Adjuvant,methotrexate
+methoxsalen,Standard,methoxsalen
+mitom,Metastatic / Inoperable & Adjuvant,mitomycin
+mitomycin,Metastatic / Inoperable & Adjuvant,mitomycin
+mitotane,Metastatic / Inoperable,mitotane
+mitoxantrone,Metastatic / Inoperable & Adjuvant,mitoxantrone
+mitoxinj,Metastatic / Inoperable & Adjuvant,mitoxantrone
+nelarabine,Standard,nelarabine
+nelarinj,Standard,nelarabine
+neratinib,Metastatic / Inoperable & Adjuvant,neratinib
+neratinib maleate,Metastatic / Inoperable & Adjuvant,neratinib
+nerlynx,Metastatic / Inoperable & Adjuvant,neratinib
+nexavar,Metastatic / Inoperable,sorafenib
+nilandron,Metastatic / Inoperable,nilutamide
+nilotinib,Metastatic / Inoperable,nilotinib
+nilotinib hcl,Metastatic / Inoperable,nilotinib
+nilutamide,Metastatic / Inoperable,nilutamide
+ninlaro,Standard,ixazomib
+nintedanib,Metastatic / Inoperable & Adjuvant,nintedanib
+nintedanib esylate,Metastatic / Inoperable & Adjuvant,nintedanib
+niraparib,Metastatic / Inoperable,niraparib
+niraparib tosylate,Metastatic / Inoperable,niraparib
+nivolumab,Metastatic / Inoperable,nivolumab
+nivolumab infusion,Metastatic / Inoperable,nivolumab
+novantrone,Metastatic / Inoperable,mitoxantrone
+obinutuzumab,Metastatic / Inoperable & Adjuvant,obinutuzumab
+odomzo,Metastatic / Inoperable & Adjuvant,sonidegib
+ofatumumab,Standard,ofatumumab
+ofev,Metastatic / Inoperable & Adjuvant,nintedanib
+olaparib,Metastatic / Inoperable,olaparib
+olaratumab,Metastatic / Inoperable,olaratumab
+oncovin,Metastatic / Inoperable & Adjuvant,vincristine
+opdivo,Metastatic / Inoperable,nivolumab
+osimertinib,Metastatic / Inoperable,osimertinib
+osimertinib mesylate,Metastatic / Inoperable,osimertinib
+oxali,Metastatic / Inoperable,oxaliplatin
+oxaliplatin,Metastatic / Inoperable,oxaliplatin
+paclis,Metastatic / Inoperable & Adjuvant,paclitaxel
+paclitaxel,Metastatic / Inoperable,paclitaxel
+paclitaxel ivpb (taxol),Metastatic / Inoperable,paclitaxel
+paclitaxel protein-bound,Metastatic / Inoperable,paclitaxel
+palbociclib,Metastatic / Inoperable,palbociclib
+panitumumab,Metastatic / Inoperable,panitumumab
+paraplatin,Metastatic / Inoperable,carboplatin
+pazopanib,Metastatic / Inoperable,pazopanib
+pazopanib hcl,Metastatic / Inoperable,pazopanib
+pegaim,Standard,pegaspargase
+pegas,Standard,pegaspargase
+pegaspargase,Standard,pegaspargase
+pembrolizumab,Metastatic / Inoperable,pembrolizumab
+pembrolizumab infusion,Metastatic / Inoperable,pembrolizumab
+pemetrexed,Metastatic / Inoperable & Adjuvant,pemetrexed
+pemetrexed disodium,Metastatic / Inoperable & Adjuvant,pemetrexed
+perjeta,Metastatic / Inoperable & Adjuvant,pertuzumab
+pertuzumab,Metastatic / Inoperable & Adjuvant,pertuzumab
+photofrin,Metastatic / Inoperable & Adjuvant,porfimer sodium
+piqray,Metastatic / Inoperable,alpelisib
+pomalidomide,,pomalidomide
+ponatinib,Standard,ponatinib
+ponatinib hcl,Standard,ponatinib
+pralatrexate,Standard,pralatrexate
+procarbazine,Metastatic / Inoperable & Adjuvant,procarbazine
+procarbazine,Metastatic / Inoperable & Adjuvant,procarbazine
+provenge,Metastatic / Inoperable,sipuleucel-t
+ramucirumab,Metastatic / Inoperable & Adjuvant,ramucirumab
+rasburicase,Metastatic / Inoperable & Adjuvant,rasburicase
+regorafenib,Metastatic / Inoperable,regorafenib
+ribociclib,Metastatic / Inoperable,ribociclib
+ribociclib succinate,Metastatic / Inoperable,ribociclib
+ritux,Metastatic / Inoperable & Adjuvant,rituximab
+rituxan,Metastatic / Inoperable & Adjuvant,rituximab
+rituximab,Metastatic / Inoperable & Adjuvant,rituximab
+rituximab ivpb (rituxan),Metastatic / Inoperable & Adjuvant,rituximab
+"rituximab/hyaluronidase,human",Metastatic / Inoperable & Adjuvant,rituximab
+romidepsin,Metastatic / Inoperable & Adjuvant,romidepsin
+rubraca,Metatatic / Inoperable,rucaparib
+rucaparib,Metatatic / Inoperable,rucaparib
+rucaparib camsylate,Metatatic / Inoperable,rucaparib
+sipuleucel-t,Metastatic / Inoperable,sipuleucel-t
+somatuline,Standard,lanreotide
+sonidegib,Metastatic / Inoperable & Adjuvant,sonidegib
+sonidegib phosphate,Metastatic / Inoperable & Adjuvant,sonidegib
+sorafenib,Metastatic / Inoperable,sorafenib
+sorafenib tosylate,Metastatic / Inoperable,sorafenib
+sprycel,Metastatic / Inoperable,dasatinib
+stivarga,Metastatic / Inoperable & Adjuvant,regorafenib
+streptozocin,Metastatic / Inoperable & Adjuvant,streptozocin
+sunitinib,Metastatic / Inoperable,sunitinib
+sunitinib malate,Metastatic / Inoperable,sunitinib
+sutent,Metastatic / Inoperable,sunitinib
+tafinlar,Metastatic / Inoperable,dabrafenib
+tagrisso,Metastatic / Inoperable,osimertinib
+tamox,Metastatic / Inoperable & Adjuvant,tamoxifen
+tamoxifen,Metastatic / Inoperable & Adjuvant,tamoxifen
+tarceva,Metastatic / Inoperable,erlotinib
+targretin,Metastatic / Inoperable & Adjuvant,bexarotene
+tasigna,Metastatic / Inoperable & Adjuvant,nilotinib
+taxol,Metastatic / Inoperable,paclitaxel
+taxotere,Metastatic / Inoperable & Adjuvant,docetaxel
+temodar,Metastatic / Inoperable & Adjuvant,temozolomide
+temozolomide,Metastatic / Inoperable & Adjuvant,temozolomide
+temsirolimus,Metastatic / Inoperable,temsirolimus
+teniposide,Metastatic / Inoperable & Adjuvant,teniposide
+thioguanine,Metastatic / Inoperable & Adjuvant,thioguanine
+tice bcg live,Standard,bcg
+tipiracil,,tipiracil
+topotecan,Metastatic / Inoperable & Adjuvant,topotecan
+topotecan hcl,Metastatic / Inoperable & Adjuvant,topotecan
+toremifene,Metastatic / Inoperable & Adjuvant,toremifene
+trametinib,Metastatic / Inoperable,trametinib
+trametinib dimethyl sulfoxide,Metastatic / Inoperable,trametinib
+trastuzumab,Metastatic / Inoperable & Adjuvant,trastuzumab
+trelstar,Metastatic / Inoperable & Adjuvant,triptorelin
+trelstar la,Metastatic / Inoperable & Adjuvant,triptorelin
+trelstar la mixject,Metastatic / Inoperable & Adjuvant,triptorelin
+trelstar mixject,Metastatic / Inoperable & Adjuvant,triptorelin
+trexall,Metastatic / Inoperable & Adjuvant,methotrexate
+trifluridine,,trifluridine
+trifluridine/tipiracil,Metastatic / Inoperable,trifluridine/tipiracil
+triptorelin,Metastatic / Inoperable & Adjuvant,triptorelin
+triptorelin pamoate,Metastatic / Inoperable & Adjuvant,triptorelin
+triptorelin pamoate (trelstar equiv),Metastatic / Inoperable & Adjuvant,triptorelin
+tykerb,Metastatic / Inoperable,lapatinib
+valchlor,Metastatic / Inoperable & Adjuvant,mechlorethamine
+vandetanib,Metastatic / Inoperable & Adjuvant,vandetanib
+vargatef,Metastatic / Inoperable & Adjuvant,nintedanib
+velcade,Metastatic / Inoperable & Adjuvant,bortezomib
+vemurafenib,Metastatic / Inoperable,vemurafenib
+venclexta,Standard,venetoclax
+venclyxto,Standard,venetoclax
+venetoclax,Standard,venetoclax
+verzenio,Metastatic / Inoperable,abemaciclib
+vidaza,Metastatic / Inoperable & Adjuvant,azacitidine
+vinblastine,Metastatic / Inoperable & Adjuvant,vinblastine
+vinblastine sulfate,Metastatic / Inoperable & Adjuvant,vinblastine
+vincr,Metastatic / Inoperable & Adjuvant,vincristine
+vincristine,Metastatic / Inoperable & Adjuvant,vincristine
+vincristine sulfate,Metastatic / Inoperable & Adjuvant,vincristine
+vincristine sulfate liposomal,Metastatic / Inoperable & Adjuvant,vincristine
+vinorelbine,Metastatic / Inoperable & Adjuvant,vinorelbine
+vinorelbine tartrate,Metastatic / Inoperable & Adjuvant,vinorelbine
+vismodegib,Metastatic / Inoperable,vismodegib
+vorinostat,Metastatic / Inoperable & Adjuvant,vorinostat
+votrient,Metastatic / Inoperable,pazopanib
+votubia,Metastatic / Inoperable & Adjuvant,everolimus
+xalkori,Metastatic / Inoperable,crizotinib
+xeloda,Metastatic / Inoperable,capecitabine
+xtandi,Metastatic / Inoperable,enzalutamide
+yervoy,Metastatic / Inoperable,ipilimumab
+zaltrap,Metastatic / Inoperable & Adjuvant,ziv-aflibercept
+zejula,Metastatic / Inoperable,niraparib
+zelboraf,Metastatic / Inoperable,vemurafenib
+ziv-aflibercept,Metastatic / Inoperable & Adjuvant,ziv-aflibercept
+zoladex,Metastatic / Inoperable & Adjuvant,goserelin
+zolinza,Metastatic / Inoperable & Adjuvant,vorinostat
+zortress,Metastatic / Inoperable & Adjuvant,everolimus
+zydelig,Metastatic / Inoperable & Adjuvant,idelalisib
+zytiga,Metastatic / Inoperable,abiraterone
+zzcarboplatin,Metastatic / Inoperable,carboplatin
+zzcytoxan,Metastatic / Inoperable & Adjuvant,cyclophosphamide
+zzetoposide,Metastatic / Inoperable & Adjuvant,etoposide
+zzparaplatin,Metastatic / Inoperable,carboplatin
