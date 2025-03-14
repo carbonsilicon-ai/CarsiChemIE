@@ -1,17 +1,28 @@
+## sythesis of detection of molecule and corefs
 
-## install
-```
-pip install MolScribe
-```
 
 
 
 ## sythesis of the structure of `Markush Molecule` 
+### workflow
+
+<img src="image/workflow_of_molecule_generation.png">
+
+### installation
+CDK needs `scyjava` which can be implement in python.
+scyjava installation
+```bash
+conda install conda-forge::scyjava
+```
+Attention!!! **It needs `java` in environment**!!!
+
+### cmd
 ```python
 python syn_markush.py
 ```
+
+### result
 ```md
-return:
 image (PIL.PngImagePlugin.PngImageFile): image of the structure of Markush Molecule
 result_dict (dict):
     ```
@@ -42,7 +53,9 @@ result_dict (dict):
     ```
 
 ```
-### visualization of molcular structure
+### visualization
+<a src="./visualization_for_mol_structure.ipynb">notebook</a>
+<div></div>
 <img src="image/molecule_structure_plot.png" style="width: 50%; height: 50%;">
 
 
@@ -65,12 +78,6 @@ result_dict (dict):
 imgkit: wkhtmltox
 ```bash
 sudo apt-get -y install wkhtmltopdf
-```
-
-
-scyjava installation
-```bash
-conda install conda-forge::scyjava
 ```
 
 rdkit
