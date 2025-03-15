@@ -274,71 +274,77 @@
 </table>
 
 ### visulization
+
 <table style="width: 300px; border-collapse: collapse;">
     <tr>
+        <th>Original Image</th>
+        <th><a href="https://github.com/microsoft/table-transformer">Table Transformer</a></th>
+        <th>Ours</th>
+    </tr>
+    <tr>
         <td style="text-align: center;">
-            <img src="image/table_ori_1.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_ori_1.png" alt="Original Image 1" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_1.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_transfomer_prediction_1.png" alt="Table Transformer Prediction 1" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_predction_1.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_predction_1.png" alt="Our Prediction 1" style="width: 300px; max-width: 300px; height: auto;">
         </td>
     </tr>
     <tr>
         <td style="text-align: center;">
-            <img src="image/table_ori_2.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_ori_2.png" alt="Original Image 2" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_2.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_transfomer_prediction_2.png" alt="Table Transformer Prediction 2" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_predction_2.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">
-            <img src="image/table_ori_3.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-        <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_3.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-        <td style="text-align: center;">
-            <img src="image/table_predction_3.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_predction_2.png" alt="Our Prediction 2" style="width: 300px; max-width: 300px; height: auto;">
         </td>
     </tr>
     <tr>
         <td style="text-align: center;">
-            <img src="image/table_ori_4.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_ori_3.png" alt="Original Image 3" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_4.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_transfomer_prediction_3.png" alt="Table Transformer Prediction 3" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_predction_4.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">
-            <img src="image/table_ori_5.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-        <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_5.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
-        </td>
-        <td style="text-align: center;">
-            <img src="image/table_predction_5.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_predction_3.png" alt="Our Prediction 3" style="width: 300px; max-width: 300px; height: auto;">
         </td>
     </tr>
     <tr>
         <td style="text-align: center;">
-            <img src="image/table_ori_6.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_ori_4.png" alt="Original Image 4" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_transfomer_prediction_6.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_transfomer_prediction_4.png" alt="Table Transformer Prediction 4" style="width: 300px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/table_predction_6.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+            <img src="image/table_predction_4.png" alt="Our Prediction 4" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_5.png" alt="Original Image 5" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_5.png" alt="Table Transformer Prediction 5" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_5.png" alt="Our Prediction 5" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_6.png" alt="Original Image 6" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_6.png" alt="Table Transformer Prediction 6" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_6.png" alt="Our Prediction 6" style="width: 300px; max-width: 300px; height: auto;">
         </td>
     </tr>
 </table>
