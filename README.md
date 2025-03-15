@@ -103,13 +103,13 @@
 </table>
 
 ### visualization
-<table style="width: 100%; border-collapse: collapse;">
+<table style="width: 250px; border-collapse: collapse;">
     <tr>
         <td style="text-align: center;">
-            <img src="image/moldetect_visualization_1.png" alt="Visualization 1" style="width: 100%; max-width: 300px; height: auto;">
+            <img src="image/moldetect_visualization_1.png" alt="Visualization 1" style="width: 250px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/moldetect_visualization_2.png" alt="Visualization 2" style="width: 100%; max-width: 300px; height: auto;">
+            <img src="image/moldetect_visualization_2.png" alt="Visualization 2" style="width: 250px; max-width: 300px; height: auto;">
         </td>
     </tr>
 </table>
@@ -193,13 +193,13 @@
 </table>
 
 ### visualization
-<table style="width: 100%; border-collapse: collapse;">
+<table style="width: 250px; border-collapse: collapse;">
     <tr>
         <td style="text-align: center;">
-            <img src="image/molecule_structure_recoginzation_1.png" alt="Visualization 1" style="width: 100%; max-width: 300px; height: auto;">
+            <img src="image/molecule_structure_recoginzation_1.png" alt="Visualization 1" style="width: 250px; max-width: 300px; height: auto;">
         </td>
         <td style="text-align: center;">
-            <img src="image/molecule_structure_recoginzation_2.png" alt="Visualization 2" style="width: 100%; max-width: 300px; height: auto;">
+            <img src="image/molecule_structure_recoginzation_2.png" alt="Visualization 2" style="width: 250px; max-width: 300px; height: auto;">
         </td>
     </tr>
 </table>
