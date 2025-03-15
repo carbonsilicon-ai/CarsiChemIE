@@ -93,12 +93,12 @@
     </tr>
     <tr>
         <td>Ours(+yolo)</td>
-        <td class="best">1.000</td>
-        <td class="best">0.935</td>
-        <td class="best">1.000</td>
-        <td class="best">0.899</td>
-        <td class="best">1.000</td>
-        <td class="best">0.939</td>
+        <td class="best"><b>1.000</b></td>
+        <td class="best"><b>0.935</b></td>
+        <td class="best"><b>1.000</b></td>
+        <td class="best"><b>0.899</b></td>
+        <td class="best"><b>1.000</b></td>
+        <td class="best"><b>0.939</b></td>
     </tr>
 </table>
 
