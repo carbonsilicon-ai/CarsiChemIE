@@ -71,8 +71,12 @@ result_dict (dict):
         </thead>
         <tbody>
             <tr>
-                <td><img src="image/molecule_structure.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/molecule_structure_plot.png" style="width: 50%; height: auto;"></td>
+                <td style="text-align: center;">
+                    <img src="image/molecule_structure.png" style="width: 50%; height: auto;">
+                </td>
+                <td style="text-align: center;">
+                    <img src="image/molecule_structure_plot.png" style="width: 50%; height: auto;">
+                </td>
             </tr>
         </tbody>
     </table>
