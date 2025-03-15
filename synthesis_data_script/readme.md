@@ -171,6 +171,9 @@ python syn_table_structure_simple.py
     </table>
 </body>
 </html>
+> blue: columns
+> red: row
+> gold: row header
 
 
 
