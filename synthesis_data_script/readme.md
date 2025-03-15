@@ -6,9 +6,12 @@
 ## sythesis of the structure of `Markush Molecule` 
 ### workflow
 
-<img src="image/workflow_of_molecule_generation.png">
+<img src="image/workflow_of_molecule_generation.png"></img>
+* First, it generate random smiles using rdkit, and random add `extention` to smiles to generate the `CXSmiles` which is
+* Then, the `CXSmiles` is fed to CDK to generation of MolBlock of `Markush Stucture`. 
+* Last, the MolBlock of `Markush Stucture` fed into `rdkit` or `indigo` to generate the image and keep the `atom symbol`(or some funtional group) and their coordinates 
 
-### installation
+### Installation
 CDK needs `scyjava` which can be implement in python.
 scyjava installation
 ```bash
@@ -53,6 +56,7 @@ result_dict (dict):
     ```
 
 ```
+
 ### visualization
 <a src="./visualization_for_mol_structure.ipynb">notebook</a>
 <div></div>
@@ -60,30 +64,131 @@ result_dict (dict):
 
 
 
+## Systhesis of the structure of table
 
-## 分子检测的合成
-* 表格中的数据
+## Purple
+The main purples of `Systhesis of the structure of table` is to inject the information of molecule structure to table, to hanle the bad case of recognization that spliting the molecule.
 
-* plain版本
-* 
+bad case in prediction of <a href="https://github.com/microsoft/table-transformer">`table transformer`</a>.
+<table>
+    <thead>
+        <tr>
+            <th>Original Image</th>
+            <th>Predition of table transformer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="image/ori_table_image.png" alt="original Image"></td>
+            <td><img src="image/table_transformer_prediction_1.png" alt="Predition of table transformer"></td>
+        </tr>
+        <tr>
+            <td><img src="image/ori_table_image_2.png" alt="original Image"></td>
+            <td><img src="image/table_transformer_prediction_2.png"  alt="Predition of table transformer"></td>
+        </tr>
+    </tbody>
+</table>
 
-## 表格检测数据的合成
 
 
-## 表格结构识别数据的合成
+### Workflow
+<img src="image/workflow_of_table_generation.png" style="width: 50%; height: 50%;">
 
+* First, random generation of the html of table. 
+* Then, generation `bordered table` and `boderless table` with `wkhtmltox`
+* Then, labeling the `bordered table` with <a href="https://github.com/xavctn/img2table">`img2table`</a> which is good at recogination of `bordered table`; and then random keep 1 image of `bordered table` and `borderless table` .
 
-
-## html2image
-imgkit: wkhtmltox
+### Installation
+* imgkit: wkhtmltox
 ```bash
+pip install imgkit
 sudo apt-get -y install wkhtmltopdf
 ```
 
-rdkit
-```
+* rdkit
+```bash
 pip install rdkit==2023.3.2
 ```
+
+### cmd
+```bash
+python syn_table_structure_simple.py
+``` 
+
+### visualization
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Table with Images</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            text-align: center; /* Center text in cells */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        /* th {
+            background-color: #f2f2f2;
+        } */
+        img {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Image</th>
+                <th>Label</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Borderless Table</td>
+                <td><img src="image/borderless_table.png" alt="Original Image"></td>
+                <td><img src="image/borderless_table_label.png" alt="Prediction of Table Transformer"></td>
+            </tr>
+            <tr>
+                <td>Bordered Table</td>
+                <td><img src="image/border_table.png" alt="Original Image"></td>
+                <td><img src="image/border_table_label.png" alt="Prediction of Table Transformer"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+## Systhesis of the detetion of table
+This code is very simple. It directly uses the data in `Systhesis of the structure of table`. And then, we training with data below.
+# Dataset Overview
+
+| Set Type         | Dataset Name                       | Number of Samples |
+|------------------|------------------------------------|-------------------|
+| Training Set     | DocLayNet                          | 80,863            |
+| Training Set     | pubtables-1m-Detection_train       | 460,589           |
+| Training Set     | TableBank                          | 278,582           |
+| Training Set     | In-house Dataset                   | 300,000           |
+| Validation Set   | pubtables-1m-Detection_val         | 57,591            |
+| Test Set         | pubtables-1m-Detection_test        | 57,125            |
+
+
+
 
 
 ## format transformation
