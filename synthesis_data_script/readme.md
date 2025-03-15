@@ -8,8 +8,8 @@
 
 <img src="image/workflow_of_molecule_generation.png"></img>
 * First, it generate random smiles using rdkit, and random add `extention` to smiles to generate the `CXSmiles` which is
-* Then, the `CXSmiles` is fed to CDK to generation of MolBlock of `Markush Stucture`. 
-* Last, the MolBlock of `Markush Stucture` fed into `rdkit` or `indigo` to generate the image and keep the `atom symbol`(or some funtional group) and their coordinates 
+* Then, the `CXSmiles` is fed to CDK to generation of MolBlock of `Markush Structure`. 
+* Last, the MolBlock of `Markush Structure` fed into `rdkit` or `indigo` to generate the image and keep the `atom symbol`(or some funtional group) and their coordinates 
 
 ### Installation
 CDK needs `scyjava` which can be implement in python.
@@ -60,7 +60,22 @@ result_dict (dict):
 ### visualization
 <a src="./visualization_for_mol_structure.ipynb">notebook</a>
 <div></div>
-<img src="image/molecule_structure_plot.png" style="width: 50%; height: 50%;">
+
+<table>
+    <thead>
+        <tr>
+            <th>Original Image</th>
+            <th>Visualization</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="image/molecule_structure.png" style="width: 50%; height: 50%;"></td>
+            <td><img src="image/molecule_structure_plot.png" style="width: 50%; height: 50%;"></td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 
