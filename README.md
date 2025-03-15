@@ -114,7 +114,7 @@
     </tr>
 </table>
 
-> the light box is the `Idtentiter` of molecule, while commen box if `text` or `molecule` of moleclue.
+> the light box is the `Idtentiter` of molecule, while oridinary box if `text` or `molecule` of moleclue.
 
 
 ## Molecule Structure Recognization
