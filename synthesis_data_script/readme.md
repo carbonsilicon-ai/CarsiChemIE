@@ -61,20 +61,22 @@ result_dict (dict):
 
 <a src="visualization_for_mol_structure.ipynb">notebook</a>
 
-<table>
-    <thead>
-        <tr>
-            <th>Original Image</th>
-            <th>Visualization</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src="image/molecule_structure.png" style="width: 50%; height: 50%;"></td>
-            <td><img src="image/molecule_structure_plot.png" style="width: 50%; height: 50%;"></td>
-        </tr>
-    </tbody>
-</table>
+<div style="text-align: center;">
+    <table style="margin: auto;">
+        <thead>
+            <tr>
+                <th>Original Image</th>
+                <th>Visualization</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="image/molecule_structure.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/molecule_structure_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 
