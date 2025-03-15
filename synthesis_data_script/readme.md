@@ -1,9 +1,29 @@
 ## sythesis of detection of molecule and corefs
 ### workflow
+<img src="image/workflow_of_molecule_detection_data_generation.png"></img>
+
 
 ### cmd
+```bash
+python plot_moldetect.py --save_dir save/dir/for/labelmefile #data generation
+python labelme2moldetect --labelme_data_path save/dir/for/labelmefile --export_coco_dir save/path/for/coco_file ##data format align
+```
 
 ### visualization
+<table style="margin: auto; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Original Image</th>
+            <th>Visualization</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="image/moldect_ori.png" style="width: 50%; height: auto;"></td>
+            <td><img src="image/moldect_ori_plot.png" style="width: 50%; height: auto;"></td>
+        </tr>
+    </tbody>
+</table>
 
 
 
