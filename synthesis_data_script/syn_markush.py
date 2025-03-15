@@ -1325,6 +1325,14 @@ def RGroup_2(mol:Chem.rdchem.Mol,
     
         print("choice", choice)
 
+    print(
+        {
+            "is_wave_line":is_wave_line,
+            "is_dash":is_dash,
+            "dash_line":dash_line,
+        }
+
+    )
     length_ratio = random.choice([3, 4, 5, 6, 7, 8])
     
     ## enumerate index of atom in extention
@@ -2290,7 +2298,7 @@ def random_generate_rgroup_type_2(idx:int=0,
     markush_type = "RGroup"
     while count < 100:
         count = count + 1
-        image, graph = RGroup_2(mol, cdk_plugin, kwargs)
+        image, graph = RGroup_2(mol, cdk_plugin, **kwargs)
 
         ## invalid molecule during drawing
         if (graph is None) or (image is None):
@@ -2524,12 +2532,12 @@ if __name__ == "__main__":
     }
     
 
-    # image, result_dict = random_generate_rgroup_type_2(
-    #                                                     idx = idx,
-    #                                                     original_smiles = original_smiles,
-    #                                                     cdk_plugin = cdk_plugin,
-    #                                                     **kwargs
-    #                                                     )
+    image, result_dict = random_generate_rgroup_type_2(
+                                                        idx = idx,
+                                                        original_smiles = original_smiles,
+                                                        cdk_plugin = cdk_plugin,
+                                                        **kwargs
+                                                        )
     # import ipdb
     # ipdb.set_trace()
 

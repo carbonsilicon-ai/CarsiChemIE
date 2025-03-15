@@ -1,5 +1,9 @@
 ## sythesis of detection of molecule and corefs
+### workflow
 
+### cmd
+
+### visualization
 
 
 
@@ -7,6 +11,7 @@
 ### workflow
 
 <img src="image/workflow_of_molecule_generation.png"></img>
+
 * First, it generate random smiles using rdkit, and random add `extention` to smiles to generate the `CXSmiles` which is
 * Then, the `CXSmiles` is fed to CDK to generation of MolBlock of `Markush Structure`. 
 * Last, the MolBlock of `Markush Structure` fed into `rdkit` or `indigo` to generate the image and keep the `atom symbol`(or some funtional group) and their coordinates 
@@ -62,26 +67,63 @@ result_dict (dict):
 <a src="visualization_for_mol_structure.ipynb">notebook</a>
 
 <div style="text-align: center;">
-    <table style="margin: auto;">
+    <table style="margin: auto; border-collapse: collapse;">
         <thead>
             <tr>
+                <th>Markush Type</th>
                 <th>Original Image</th>
                 <th>Visualization</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="text-align: center;">
-                    <img src="image/molecule_structure.png" style="width: 50%; height: auto;">
-                </td>
-                <td style="text-align: center;">
-                    <img src="image/molecule_structure_plot.png" style="width: 50%; height: auto;">
-                </td>
+                <td>Normal Molecule</td>
+                <td><img src="image/normal_mol.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/normal_mol_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>Rgroup(dash)</td>
+                <td><img src="image/rgroup_type_2_dash.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/rgroup_type_2_dash_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>Rgroup(dash line)</td>
+                <td><img src="image/rgroup_type_2_wave_line.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/rgroup_type_2_wave_line_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>Rgroup(wave_line)</td>
+                <td><img src="image/rgroup_type_2_dash_line.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/rgroup_type_2_dash_line_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>uncertainty_position_v1</td>
+                <td><img src="image/uncertainty_position_v1.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/uncertainty_position_v1_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>uncertainty_position_v1(indigo)</td>
+                <td><img src="image/uncertainty_position_v1_indigo.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/uncertainty_position_v1_indigo_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>uncertainty_position_v2</td>
+                <td><img src="image/uncertainty_position_v2.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/uncertainty_position_v2_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>uncertainty_position_v2(indigo)</td>
+                <td><img src="image/uncertainty_position_v2_indigo.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/uncertainty_position_v2_indigo_plot.png" style="width: 50%; height: auto;"></td>
+            </tr>
+            <tr>
+                <td>polymer</td>
+                <td><img src="image/polymer.png" style="width: 50%; height: auto;"></td>
+                <td><img src="image/polymer_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
         </tbody>
     </table>
 </div>
-
 
 
 
