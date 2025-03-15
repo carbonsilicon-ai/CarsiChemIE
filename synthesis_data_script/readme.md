@@ -58,8 +58,8 @@ result_dict (dict):
 ```
 
 ### visualization
-<a src="./visualization_for_mol_structure.ipynb">notebook</a>
-<div></div>
+
+<a src="visualization_for_mol_structure.ipynb">notebook</a>
 
 <table>
     <thead>
