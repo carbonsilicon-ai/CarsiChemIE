@@ -2,31 +2,6 @@
 
 ## Molecule detection
 ### the result of molecule detection
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOU 数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .best {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
 
 <table>
     <tr>
@@ -85,35 +60,9 @@
     </tr>
 </table>
 
-</body>
-</html>
 
 ### the result accurancy of match of index and molecule
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOU 数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .best {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+
 
 <table>
     <tr>
@@ -154,35 +103,7 @@
     </tr>
 </table>
 
-</body>
-</html>
-
 ## Molecule Structure Recognization
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模型数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .best {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
 
 <table>
     <tr>
@@ -256,36 +177,8 @@
     </tr>
 </table>
 
-</body>
-</html>
 
 ## the result of table detection
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOU 数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .best {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
 <table>
     <tr>
         <th>模型</th>
@@ -316,45 +209,18 @@
     </tr>
 </table>
 
-</body>
-</html>
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOU 数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .best {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
 
 ## the result of table structure recoginization (cell level)
 <table>
     <tr>
         <th>模型</th>
-        <th>IOU@50% 精度</th>
-        <th>IOU@50% 召回</th>
-        <th>IOU@75% 精度</th>
-        <th>IOU@75% 召回</th>
-        <th>IOU@90% 精度</th>
-        <th>IOU@90% 召回</th>
+        <th>IOU@50% Precision</th>
+        <th>IOU@50% Recall</th>
+        <th>IOU@75% Precision</th>
+        <th>IOU@75% Recall</th>
+        <th>IOU@90% Precision</th>
+        <th>IOU@90% Recall</th>
     </tr>
     <tr>
         <td>DETR</td>
@@ -380,29 +246,6 @@
 </html>
 
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR 数据表</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-
 ## the result of ocr
 <table>
     <tr>
@@ -423,9 +266,6 @@
     </tr>
     <tr>
         <td>LatexOCR(ours)</td>
-        <td>**0.0384**</td>
+        <td><b>0.0384</b></td>
     </tr>
 </table>
-
-</body>
-</html>
