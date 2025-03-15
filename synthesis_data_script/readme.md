@@ -86,4 +86,45 @@ pip install rdkit==2023.3.2
 ```
 
 
+## format transformation
+### coco2yolo
+<a src="./coco2yolo.py">coco2yolo</a>
+<div></div>
 
+```bash
+python coco2yolo.py --json_path /path/of/coco --save_path path/to/save/yolo_label
+```
+
+### labelme2coco
+It can refer to <a src="https://github.com/fcakyon/labelme2coco">labelme2coco</a>.
+
+```bash
+pip install -U labelme2coco
+```
+
+```python
+# import package
+import labelme2coco
+
+# set directory that contains labelme annotations and image files
+labelme_folder = "tests/data/labelme_annot"
+
+# set export dir
+export_dir = "tests/data/"
+
+# set train split rate
+train_split_rate = 0.85
+
+# set category ID start value
+category_id_start = 1
+
+# convert labelme annotations to coco
+labelme2coco.convert(labelme_folder, export_dir, train_split_rate, category_id_start=category_id_start)
+```
+
+## coco2MolDetect
+The format of `MolDetect` refers to <a src="https://github.com/Ozymandias314/MolDetect/tree/main">labelme2coco</a>.
+
+```bash
+python coco2moldetect.py --coco_data_path /path/of/coco_data
+```
