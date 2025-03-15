@@ -243,7 +243,7 @@ python syn_table_structure_simple.py
 
 ## Systhesis of the detetion of table
 This code is very simple. It directly uses the data in `Systhesis of the structure of table`. And then, we training with data below.
-# Dataset Overview
+### Dataset Overview
 
 | Set Type         | Dataset Name                       | Number of Samples |
 |------------------|------------------------------------|-------------------|
@@ -256,9 +256,7 @@ This code is very simple. It directly uses the data in `Systhesis of the structu
 
 
 
-
-
-## format transformation
+## Format Transformation
 ### coco2yolo
 <a src="./coco2yolo.py">coco2yolo</a>
 <div></div>
