@@ -274,7 +274,74 @@
 </table>
 
 ### visulization
-
+<table style="width: 300px; border-collapse: collapse;">
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_1.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_1.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_1.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_2.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_2.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_2.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_3.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_3.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_3.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_4.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_4.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_4.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_5.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_5.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_5.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">
+            <img src="image/table_ori_6.png" alt="Visualization 1" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_transfomer_prediction_6.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+        <td style="text-align: center;">
+            <img src="image/table_predction_6.png" alt="Visualization 2" style="width: 300px; max-width: 300px; height: auto;">
+        </td>
+    </tr>
+</table>
 
 
 
