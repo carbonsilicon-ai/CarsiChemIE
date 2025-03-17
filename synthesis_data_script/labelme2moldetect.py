@@ -19,8 +19,8 @@ def standard_second_file_path(labelme_folder):
                         with open(os.path.join(labelme_folder, second_dir, file_name, file_path), "r") as f:
                             temp_data = json.loads(f.read())
                         
-                        ## 二级目录
-                        temp_data["imagePath"] = "/".join((os.path.abspath(os.path.join(second_dir, file_name, os.path.basename(temp_data["imagePath"])))).split("/")[-2:]) #二级目录
+                        ## 三级目录
+                        temp_data["imagePath"] = "/".join((os.path.abspath(os.path.join(second_dir, file_name, os.path.basename(temp_data["imagePath"])))).split("/")[-3:]) #三级目录
                         print(temp_data["imagePath"])
                         with open(os.path.join(labelme_folder, second_dir, file_name, file_path), "w") as f:
                             f.write(json.dumps(temp_data))
