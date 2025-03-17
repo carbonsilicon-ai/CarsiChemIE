@@ -930,85 +930,58 @@ def paste_top_left(ori_image, idx_image, idx_box, bboxes, proba=None):
     return new_image, bboxes
 
 
-def paste_right_mid(ori_image, idx_image, idx_box, bboxes, proba=None):
-    if proba is None:
-        proba = random.random()
-
+def paste_right_mid(ori_image, idx_image, idx_box, bboxes):
     
-    if proba < 0.75:
-        ## 右中
-        offset = random.randint(0, int(idx_image.size[0]))
-        offset_y = random.randint(-10, 10)
-        width = ori_image.size[0] + idx_image.size[0] + offset
-        height = max(ori_image.size[1], idx_image.size[1])
-        
-        ## 画布
-        new_image = Image.new('RGB', (width, height), (255, 255, 255))
-        
-        # 将原图像粘贴到新图像中，保持原有位置不变
-        ## 先贴分子(分子需要水平居中)
-        new_image.paste(ori_image, (0, 0))
-        ## 再贴索引
-        new_image.paste(idx_image, (ori_image.size[0] + offset, height//2 - idx_image.size[1]//2 + offset_y))
-        
-        # temp_mol_box = mol_box.pop("bbox")
-        # temp_mol_box = (0+temp_mol_box[1], 0+temp_mol_box[1], 
-        #                 temp_mol_box[2], temp_mol_box[3])
-        # mol_box["bbox"] = temp_mol_box
+    ## 右中
+    offset = random.randint(0, int(idx_image.size[0]))
+    offset_y = random.randint(-10, 10)
+    width = ori_image.size[0] + idx_image.size[0] + offset
+    height = max(ori_image.size[1], idx_image.size[1])
+    
+    ## 画布
+    new_image = Image.new('RGB', (width, height), (255, 255, 255))
+    
+    # 将原图像粘贴到新图像中，保持原有位置不变
+    ## 先贴分子(分子需要水平居中)
+    new_image.paste(ori_image, (0, 0))
+    ## 再贴索引
+    new_image.paste(idx_image, (ori_image.size[0] + offset, height//2 - idx_image.size[1]//2 + offset_y))
+    
+    # temp_mol_box = mol_box.pop("bbox")
+    # temp_mol_box = (0+temp_mol_box[1], 0+temp_mol_box[1], 
+    #                 temp_mol_box[2], temp_mol_box[3])
+    # mol_box["bbox"] = temp_mol_box
 
-        ## 先添加坐标的offset
-        for bbox in bboxes:
-            box = bbox["bbox"]
-            new_box = (box[0] + 0, box[1] + 0, box[2], box[3])
-            bbox["bbox"] = new_box
+    ## 先添加坐标的offset
+    for bbox in bboxes:
+        box = bbox["bbox"]
+        new_box = (box[0] + 0, box[1] + 0, box[2], box[3])
+        bbox["bbox"] = new_box
+    
+    ## 添加额外的box
+    if isinstance(idx_box, dict):
+        if "bbox" in idx_box:
+            idx_box_ = copy.deepcopy(idx_box)
+            temp_idx_box = idx_box_.pop("bbox")
+            temp_idx_box = (ori_image.size[0] + offset + temp_idx_box[0], 
+                            height//2 - idx_image.size[1]//2 + offset_y + temp_idx_box[1], 
+                            temp_idx_box[2], 
+                            temp_idx_box[3])
+            idx_box_["bbox"] = temp_idx_box
         
-        ## 添加额外的box
-        temp_idx_box = idx_box.pop("bbox")
-        temp_idx_box = (ori_image.size[0] + offset, height//2 - idx_image.size[1]//2 + offset_y, 
-                        temp_idx_box[2], temp_idx_box[3])
-        idx_box["bbox"] = temp_idx_box
-        
-        bboxes.append(idx_box)
-    else:
-        ## 右中
-        offset = random.randint(0, int(idx_image.size[0]))
-        offset_y = random.randint(-10, 10)
-        width = ori_image.size[0] + idx_image.size[0]*2 + offset
-        height = max(ori_image.size[1], idx_image.size[1])
-        
-        ## 画布
-        new_image = Image.new('RGB', (width, height), (255, 255, 255))
-        
-        # 将原图像粘贴到新图像中，保持原有位置不变
-        ## 先贴分子(分子需要水平居中)
-        new_image.paste(ori_image, (0, 0))
-        ## 再贴索引
-        new_image.paste(idx_image, (ori_image.size[0] + offset, height//2 - idx_image.size[1]//2 + offset_y))
-        
-        ## 先添加坐标的offset
-        for bbox in bboxes:
-            box = bbox["bbox"]
-            new_box = (box[0] + 0, box[1] + 0, box[2], box[3])
-            bbox["bbox"] = new_box
-        
-
-        temp_idx_box = idx_box.pop("bbox")
-        temp_idx_box = (ori_image.size[0] + offset, height//2 - idx_image.size[1]//2 + offset_y, 
-                        temp_idx_box[2], temp_idx_box[3])
-        idx_box["bbox"] = temp_idx_box
-        
-        bboxes.append(idx_box)
-
-        ## 再次粘贴
-        new_image.paste(idx_image, (ori_image.size[0] + offset + idx_image.size[0], height//2 - idx_image.size[1]//2 + offset_y))
-
-        new_id_box = copy.deepcopy(idx_box)
-        temp_idx_box = new_id_box.pop("bbox")
-        temp_idx_box = (ori_image.size[0] + offset + idx_image.size[0], height//2 - idx_image.size[1]//2 + offset_y, 
-                        temp_idx_box[2], temp_idx_box[3])
-        new_id_box["bbox"] = temp_idx_box
-
-        bboxes.append(new_id_box)
+            bboxes.append(idx_box_)
+    if isinstance(idx, list):
+        for idx_box_ in idx_box:
+            if "bbox" in idx_box_:
+                idx_box_ = copy.deepcopy(idx_box)
+                temp_idx_box = idx_box_.pop("bbox")
+                temp_idx_box = (ori_image.size[0] + offset + temp_idx_box[0], 
+                                height//2 - idx_image.size[1]//2 + offset_y + temp_idx_box[1], 
+                                temp_idx_box[2], 
+                                temp_idx_box[3])
+                idx_box_["bbox"] = temp_idx_box
+            
+                bboxes.append(idx_box_)
 
     return new_image, bboxes
 
