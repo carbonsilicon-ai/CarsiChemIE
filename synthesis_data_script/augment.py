@@ -7,7 +7,7 @@ import random
 import numpy as np
 
 
-def safe_rotate(
+def safotate(
     img: np.ndarray,
     angle: int = 0,
     interpolation: int = cv2.INTER_LINEAR,
