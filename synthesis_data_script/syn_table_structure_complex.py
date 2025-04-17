@@ -6,7 +6,6 @@ main_dir = os.path.dirname(os.path.abspath(__file__))
 print("main_dir", main_dir)
 sys.path.append(main_dir)
 
-
 import rdkit
 from rdkit import Chem
 from rdkit.Chem import rdDepictor
@@ -34,9 +33,8 @@ import albumentations as A
 import imgkit
 import argparse
 
-
 ## 找到最大非空白部分的函数
-## ref:https://github.com/thomas0809/MolScribe/blob/7296a30413eb55436702011efdff78131f66d162/molscribe/augment.py#L97
+#ref:https://github.com/thomas0809/MolScribe/blob/7296a30413eb55436702011efdff78131f66d162/molscribe/augment.py#L97
 ## to align boderless table and bodered table
 class CropWhite(A.DualTransform):
     
@@ -86,7 +84,6 @@ class CropWhite(A.DualTransform):
 
     def get_transform_init_args_names(self):
         return ('value', 'pad')
-
 
 ## 找到最大非空白部分的函数
 def get_transforms_fn(pad=10):
@@ -155,7 +152,6 @@ def get_index():
             result1 = "(" + u'\u00B1' + ") " + result1
     
     return result1
-
 
 def get_end_atoms_idx(mol,
                     only_single_bond=True, 
@@ -376,11 +372,6 @@ def get_activity():
     return result1
 
 def get_yield():
-    """随机生成分子的活性数据
-
-    Returns:
-        result1 (str): 分子的产率
-    """
     result1 = random.choice(["yield","ee","E/Z","S/R"]) +" : "+ str(round(random.randint(0, 1000)*0.1, 2)) + "%"
     return result1
 
@@ -529,24 +520,12 @@ def draw_molecule(mol, size=384,
 
 
 def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:int=0):
-    """为borderless的html增加css修饰
-
-    Args:
-        html_content (str): 原始的html, Defaults to "".
-        mode (int): 如果mode为0，则对单元格采用顶端对齐的操作，否则采用居中对齐. Defaults to 0.
-        pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
-        horizen_pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
-
-    Returns:
-        html_content_with_css (str) : 增加css修饰后的html文件
-    """
-    
+    """"""
     if mode == 0:
         temp_string = "td {vertical-align: top;}"
     else:
         temp_string = "td {vertical-align: middle;}"
-    
-    ## 最后一行是否为实线，不影响img2table的识别
+        
     if random.random()<0.75:
         temp_string += """
         tr:last-child td {
@@ -554,20 +533,30 @@ def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:
         }
         """
     
+    vertical_flag = False
     if random.random()<0.5:
-        ## 上下边框为实线
-        temp_string += """
-        td {
-            border-left: 1px solid white; /* 右边框 */
-            border-right: 1px solid white; /* 右边框 */
-            border-bottom: 1px solid black; /* 下边框 */
-            border-top: 1px solid black; /* 上边框 */
-            padding: %dpx
-        }
-        """%(pad)
-        
+        if random.random()>-1:
+            temp_string += """
+            td {
+                border-left: 1px solid white; /* 右边框 */
+                border-right: 1px solid white; /* 右边框 */
+                border-bottom: 1px solid black; /* 下边框 */
+                border-top: 1px solid black; /* 上边框 */
+                padding: %dpx
+            }
+            """%(pad)
+        else:
+            vertical_flag = True
+            temp_string += """
+            td {
+                border-bottom: 1px solid white; /* 下边框 */
+                border-top: 1px solid white; /* 下边框 */
+                border-left: 1px solid black; /* 下边框 */
+                border-right: 1px solid black; /* 下边框 */
+                padding: %dpx
+            }
+            """%(pad)
     else:
-        ## 上下边框不为实线
         ## 真* 三线表
         temp_string += """
             td {
@@ -578,17 +567,26 @@ def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:
                 padding: %dpx
             }
             """%(pad)
-    ## 表头的css设置
+
+
+    
     if random.random()<0.8:
-        ## 表头祖先
         temp_string += """
         th {
             border-top: 2px solid black; /* 设置表头的上边框 */
             border-bottom: 2px solid black; /* 设置表头的下边框 */
         }
         """
+        if vertical_flag:
+            temp_string += """
+        th {
+            border-left: 2px solid black; /* 设置表头的上边框 */
+            border-right: 2px solid black; /* 设置表头的下边框 */
+        }
+        """
+            
+
     else:
-        ## 表头填充灰色 
         color = "gray" #random.choice(["gray","lightgray"])
         temp_string += """
         th {
@@ -606,7 +604,6 @@ def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:
         }
         """%(color, color, color)
     
-    ## 水平填充
     temp_string += """
         th, td {
             padding-left: %dpx;
@@ -754,41 +751,6 @@ def df_2_html(df, borderless=False, mode=0):
         html = get_border_html(html, mode)
     return html
 
-
-
-# def excel_2_html_V2(ws, borderless=False, mode=0, len_header=1):
-#     html = excel_to_html.convert_to_html_table(ws, len_header=len_header)
-#     if borderless:
-#         html = get_borderless_html(html, mode)
-#     else:
-#         html = get_border_html(html, mode)
-#     return html
-
-# # 创建 Chrome WebDriver（确保已安装 Chrome 驱动程序，并将其路径指定为下面的 executable_path）
-# options = Options()
-# options.add_argument("--headless")  # 无头模式，可选
-# options.add_argument("--no-sandbox")  # 在某些环境下需要添加该参数
-# options.add_argument('--disable-gpu') 
-# options.add_argument("--disable-dev-shm-usage")  # 在某些环境下需要添加该参数
-# options.add_argument("--window-size=3840,3840")  # 设置窗口大小为 1920x1080
-# # options.binary_location = '/home/baolingjie/chromedriver'  # Chrome 浏览器的二进制文件路径    
-# driver = webdriver.Chrome(options=options)
-
-# def html_to_image(html_content, output_path):
-
-#     # 将 HTML 内容写入临时 HTML 文件
-#     with open('temp.html', 'w', encoding='utf-8') as file:
-#         file.write(html_content)
-
-#     # 加载临时 HTML 文件
-#     driver.get('file:///' + os.path.abspath('temp.html'))
-
-#     # 将页面内容截图并保存为图像文件
-#     driver.save_screenshot(output_path)
-
-#     # 关闭 WebDriver
-#     # driver.quit()
-
 def html_to_image_V2(html_content, output_path):
     imgkit.from_string(html_content, output_path)
 
@@ -831,8 +793,7 @@ with open(os.path.join(main_dir, "chemistry_data", "abbretion.txt"), "r") as f:
                 abbre_dict[key] = value
 
 abbre_dict["H"] = "H"
-
-## 官能团
+                
 with open(os.path.join(main_dir, "chemistry_data", "FunctionalGroups.txt"), "r") as f:
     for line in f.readlines():
         line = line.rstrip("\n")
@@ -843,7 +804,7 @@ with open(os.path.join(main_dir, "chemistry_data", "FunctionalGroups.txt"), "r")
                 if len(line_list)==3:
                     abbre_dict[line_list[-1]] = line_list[0]
                     
-## 随机
+
 def generate_random_Chemistry_text(with_prefix=False):
     chem_string = random.choice(list(abbre_dict.keys()))
     if with_prefix:
@@ -874,6 +835,7 @@ def get_text_dimensions(text_string, font):
     text_height = font.getmask(text_string).getbbox()[3] + descent
         
     return (text_width, text_height)
+
 
 
 font_size = 12
@@ -952,7 +914,7 @@ if __name__ == "__main__":
     total_result = []
     df_solvent["Permeablity"] = ["%.2f/%.2f"%(random.random()*random.choice([0.1, 1, 10, 100, 100]), random.random()*random.choice([0.1, 1, 10, 100, 100])) for _ in range(len(df_solvent))]
     df_solvent["Activity"] = ["%s%.2f%s"%(random.choice(["","≈",">","≥",">>","<<","≤","<"]),random.random()*random.choice([0.1, 1, 10, 100, 100]), random.choice(["nM","uM"])) for _ in range(len(df_solvent))]
-    columns_list = [temp for temp in df_solvent.columns.tolist() if temp not in ["Molecule","canonical_smiles"]]
+    columns_list = [temp for temp in df_solvent.columns.tolist() if temp != "Molecule"]
     unit_list = ["h","°C","10<sup>6<sup>cm/s","s", "%", "L/Kg","mg/Kg","min","ng/g", ""]
     for img_idx in tqdm(range(30000)):
         sample_columns_number = random.randint(2, 8)
@@ -971,9 +933,9 @@ if __name__ == "__main__":
         if plot_mode == 1:
             sample_number = random.randint(5, 75)
         elif plot_mode == 2:
-            sample_number = random.randint(10, 30)
+            sample_number = random.randint(5, 25)
         else:
-            sample_number = random.randint(10, 30)
+            sample_number = random.randint(5, 25)
         
         if plot_mode == 1:
             is_pure_num = random.random()<0.33
@@ -1058,8 +1020,7 @@ if __name__ == "__main__":
                             temp_mol = random_char_replace(temp_mol)
                             mol = copy.deepcopy(temp_mol)
                     else:
-                        ## 不要使用长字符串
-                        if random.random()<0.0:
+                        if random.random()<0.85:
                             mol = temp_df.loc[idx, "Molecule"]
                         else:
                             _idx = random.randint(0, len(df_compound)-1)
@@ -1145,12 +1106,12 @@ if __name__ == "__main__":
         columns = new_df.columns.to_list()
 
         ##随机镂空
-
         temp_proba = random.random()
         ## 保持原来的就行了
         if temp_proba < 0.3:
             pass
         elif temp_proba < 0.6:
+            ## 交换第一列（索引）和第二列（分子）
             columns[0], columns[1] = columns[1], columns[0]
             new_df = new_df[columns]
             mol_idx = 0
@@ -1169,10 +1130,168 @@ if __name__ == "__main__":
         
         # len_header = 1#new_df.columns[0]
         ## 表头的长度
+        len_header = random.choices([1, 2])[0]
         temp_columns = new_df.columns.to_list()
+        if len_header == 2:
+            random_columns = [(((temp_columns[i], 
+                                 random.choices(["result<br>(T)", "activity(kd)", "inhibition(%)", "IC<sub>50<sub>", "\u25B3T(°C)", "entry", r"%inhibition", "yeild", "Kd", "Ki",
+                                                "Result", "Actvity<br>(%s)"%(random.choice(["Ki","Kd","IC<sub>50<sub>"])), "Inhibition<br>(%)", "Entry", r"%Inhibition", "Yeild<br>(%)","ee(%)"],)[0])) ) for i in range(len(temp_columns))]
+            # new_columns = pd.MultiIndex.from_tuples(random_columns)
+            # new_df.columns = new_columns
+            
+        elif len_header == 1:
+            random_columns = temp_columns
+
+        new_temp_df = pd.DataFrame(random_columns).T
+        new_temp_df.columns = new_df.columns.to_list()
+
+        new_df = pd.concat([new_temp_df, new_df])
+        new_df = new_df.reset_index(drop=True)
+
+        merge_dict = {}
+        ignore_list = []
+
+        ## 合并索引
+        proba = random.random()
+        ## 合并表头的索引
+        if proba<0.15 and len_header==2:
+            merge_dict[(0,0)] = {"rowspan":f"{len_header}"}
+            ignore_list.append((1,0))
+        
+        elif len_header>=3 and proba<0.15:
+            start = random.randint(0,1)
+            merge_dict[(start,0)] = {"rowspan":f"{2}"}
+            ignore_list.append((start+1,0))
         
         
         nums_row, nums_col = new_df.shape
+        # print("合并表头")
+        # ## 合并表头
+        j = 1
+        if args.with_multi:
+            factor = max(random.choice([1, 1.5, 2, 2.5, 3]), 1)
+            while j < nums_col:
+                i = 0
+                merge_proba = random.random()
+                merge_cols = 0
+                if merge_proba>0: #需要修改的概率
+                    merge_cols = random.choices([1,2,3,4,5],weights=[8,8,8,8,2])[0]
+                    merge_cols = max(min(nums_col-1-j-1, merge_cols), 0)
+                    if merge_cols == 0:
+                        pass
+                    else:
+                        if (i,j) in merge_dict:
+                            merge_dict[(i,j)]["colspan"] = f"{merge_cols+1}"
+                        else:
+                            merge_dict[(i,j)] = {"colspan":f"{merge_cols+1}"}
+                        for temp_j in range(j+1, j+merge_cols+1):
+                            ignore_list.append((i, temp_j))
+                        
+                        ## 随机替换分子
+                        if random.random()<0.3:
+                            temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
+                            new_df.iloc[i, j] = get_mol_image(temp_mol, int(mol_size*factor))
+
+                
+                if merge_cols > 0:
+                    i = i + 1
+                    max_merge_cols = merge_cols
+                    ## 遍历每一行
+                    while i < len_header:
+                        if max_merge_cols%6==0:
+                            temp_merge_cols = max_merge_cols//random.randint(1,2,3)
+                        elif max_merge_cols%2==0:
+                            temp_merge_cols = max_merge_cols//random.randint(1,2)
+                        elif max_merge_cols%3==0:
+                            temp_merge_cols = max_merge_cols//random.randint(1,3)
+                        elif max_merge_cols%5==0:
+                            temp_merge_cols = max_merge_cols//random.randint(1,5)
+                        else:
+                            temp_merge_cols = max_merge_cols
+                        
+                        if random.random()<0.5:
+                            if temp_merge_cols<max_merge_cols:
+                                max_merge_cols = temp_merge_cols
+
+                        if temp_merge_cols>0:
+                            for temp_j in range(j, j+merge_cols+1, temp_merge_cols+1):
+                                if temp_j+temp_merge_cols+1>j+merge_cols+1:
+                                    continue
+                                merge_proba_2 = random.random()
+                                if merge_proba_2>0:#需要修改的概率
+                                    if (i, temp_j) in merge_dict:
+                                        merge_dict[(i, temp_j)]["colspan"] = f"{temp_merge_cols+1}"
+                                    else:
+                                        merge_dict[(i, temp_j)] = {"colspan":f"{temp_merge_cols+1}"}
+                                    for temp_j_2 in range(temp_j+1, temp_j+temp_merge_cols+1):
+                                        ignore_list.append((i, temp_j_2))
+                        
+                        i = i + 1
+                
+                j = j + merge_cols + 1
+        
+            
+            ## 合并分子
+            i = len_header + 1 if random.random()>0.5 else len_header
+            # print("合并分子")
+            start_j = random.choices([0, 1, 2], weights=[4,4,2])[0]
+            while i < nums_row:
+                j = start_j ## 从start_j开始
+                merge_proba = random.random()
+                merge_rows = 0
+                if merge_proba>0:#需要修改的概率
+                    merge_rows = random.choices([1,2,3,4,5],weights=[8,8,8,8,3])[0]
+                    merge_rows = max(min(nums_row-1-i-1, merge_rows), 0)
+                    if merge_rows==0:
+                        pass
+                    else:
+                        if (i,j) in merge_dict:
+                            merge_dict[(i,j)]["rowspan"] = f"{merge_rows+1}"
+                        else:
+                            merge_dict[(i,j)] = {"rowspan":f"{merge_rows+1}"}
+                        for temp_i in range(i+1, i+merge_rows+1):
+                            ignore_list.append((temp_i,j))
+                
+                if merge_rows > 0:
+                    max_merge_rows = merge_rows
+                    ## 遍历每一列
+                    j = j + 1
+                    while j < nums_col:
+                        if max_merge_rows%6==0:
+                            temp_merge_rows = max_merge_rows//random.randint(1,2,3)
+                        elif max_merge_rows%2==0:
+                            temp_merge_rows = max_merge_rows//random.randint(1,2)
+                        elif max_merge_rows%3==0:
+                            temp_merge_rows = max_merge_rows//random.randint(1,3)
+                        elif max_merge_rows%5==0:
+                            temp_merge_rows = max_merge_rows//random.randint(1,5)
+                        else:
+                            temp_merge_rows = max_merge_rows
+                        
+                        if random.random()<0.15:
+                            if temp_merge_rows<max_merge_rows:
+                                max_merge_rows = temp_merge_rows
+                            
+
+                        if temp_merge_rows>0:
+                            for temp_i in range(i, i+merge_rows+1, temp_merge_rows+1):
+                                merge_proba_2 = random.random()
+                                if temp_i + temp_merge_rows+1 > i+merge_rows+1:
+                                    continue
+                                if merge_proba_2>0:#需要修改的概率
+                                    if (temp_i, j) in merge_dict:
+                                        merge_dict[(temp_i, j)]["rowspan"] = f"{temp_merge_rows+1}"
+                                    else:
+                                        merge_dict[(temp_i, j)] = {"rowspan":f"{temp_merge_rows+1}"}
+                                    for temp_i_2 in range(temp_i+1, temp_i+temp_merge_rows+1):
+                                        ignore_list.append((temp_i_2, j))
+                                
+                        
+                        j = j + 1
+
+                i = i + merge_rows + 1
+                # print(i, merge_rows, nums_row)
+
 
         # print("table2html")
         nums_row, nums_col = new_df.shape
@@ -1188,11 +1307,7 @@ if __name__ == "__main__":
             else:
                 mol_idx = None
                 width_percent = 100//(new_df.shape[1])+1
-        
-        merge_dict = {}
-        ignore_list = []
 
-        len_header = 1
         for row_idx in range(nums_row):
             if len_header>0:
                 if row_idx==0:
@@ -1246,8 +1361,6 @@ if __name__ == "__main__":
                         else:
                             table_html += f'<td class="{css_class}" rowspan="{rowspan}" colspan="{colspan}" style="width:{width_percent*(random_mol_part+1)}%">{cell_value}</td>'
 
-
-
             table_html += "</tr>"
 
             if row_idx==len_header-1:
@@ -1258,16 +1371,17 @@ if __name__ == "__main__":
         
         table_html += "</table>"
 
-        pad = random.choices([1, random.randint(1, int(font_size*2))], weights=[2,10])[0]
+        pad = random.choices([0, random.randint(1, int(font_size*2))], weights=[10,2])[0]
 
         if plot_mode == 2:
             horizen_pad = random.randint(5, 50)
         else:
-            horizen_pad = random.randint(5, 20)
+            horizen_pad = random.randint(2, 10)
         
         border_table_html = get_border_html(table_html, mode, pad, horizen_pad)
         borderless_table_html = get_borderless_html(table_html, mode, pad, horizen_pad)
 
+        # original_border_path = os.path.join(save_dir, "temp_dir", f"{img_idx}_border_ori.png")
         border_path = os.path.join(save_dir, "temp_dir", f"{img_idx}_border.png")
         borderless_path = os.path.join(save_dir, "temp_dir", f"{img_idx}_borderless.png")
 
@@ -1445,6 +1559,10 @@ if __name__ == "__main__":
 
             os.remove(border_path)
             os.remove(borderless_path)
+
+            import ipdb
+            ipdb.set_trace()
+
             
         if (img_idx+1)%2000 == 0:
             last_result =  {
@@ -1463,6 +1581,8 @@ if __name__ == "__main__":
 
             with open(os.path.join(save_dir,"label","total.json"), "w") as f:
                 f.write(json.dumps(last_result))
+            
+            
     
     last_result =  {
         "categories": [{"id": 1, "name": "row"}, {"id": 2, "name": "columns"}, {"id": 3, "name": "span"}], 
@@ -1484,6 +1604,7 @@ if __name__ == "__main__":
         "licenses": [{"name": "", "id": 0, "url": ""}],
         "images":total_result
     }
+
 
     with open(os.path.join(save_dir,"label","total.json"), "w") as f:
         f.write(json.dumps(last_result))
