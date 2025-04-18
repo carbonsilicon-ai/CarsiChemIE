@@ -149,8 +149,8 @@ result_dict (dict):
 
 ## Systhesis of the structure of table
 
-## Purple
-The main purples of `Systhesis of the structure of table` is to inject the information of molecule structure to table, to hanle the bad case of recognization that spliting the molecule.
+## purpose
+The main purpose of `Systhesis of the structure of table` is to inject the information of molecule structure to table, to hanle the bad case of recognization that spliting the molecule.
 
 bad case in prediction of <a href="https://github.com/microsoft/table-transformer">`table transformer`</a>.
 <table>
@@ -195,8 +195,10 @@ pip install rdkit==2023.3.2
 
 ### cmd
 ```bash
-python syn_table_structure_simple.py
+python syn_table_structure_simple.py #for simple table
+python syn_table_structure_complex.py #for complex table which contians complex table structure, such multi-row, multi-cols
 ``` 
+> syn_table_structure_simple.py: no cell span, no multi-row, no multi-cols;
 
 ### visualization
 <html lang="en">
@@ -237,6 +239,7 @@ python syn_table_structure_simple.py
                 <th>Type</th>
                 <th>Image</th>
                 <th>Label</th>
+                <th>Label(cell-span)</th>
             </tr>
         </thead>
         <tbody>
@@ -244,20 +247,35 @@ python syn_table_structure_simple.py
                 <td>Borderless Table</td>
                 <td><img src="image/borderless_table.png" alt="Original Image"></td>
                 <td><img src="image/borderless_table_label.png" alt="Prediction of Table Transformer"></td>
+                <td><img src="image/borderless_table.png" alt="Original Image"></td>
+            </tr>
+            <tr>
+                <td>Borderless Table (complex)</td>
+                <td><img src="image/borderless_table(multi-row-columns-ori).png" alt="Original Image"></td>
+                <td><img src="image/borderless_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
+                <td><img src="image/borderless_table(multi-row-columns-spanning).png" alt="Original Image"></td>
             </tr>
             <tr>
                 <td>Bordered Table</td>
                 <td><img src="image/border_table.png" alt="Original Image"></td>
                 <td><img src="image/border_table_label.png" alt="Prediction of Table Transformer"></td>
+                <td><img src="image/border_table.png" alt="Original Image"></td>
+            </tr>
+            <tr>
+                <td>Bordered Table (complex)</td>
+                <td><img src="image/bordered_table(multi-row-columns-ori).png" alt="Original Image"></td>
+                <td><img src="image/bordered_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
+                <td><img src="image/bordered_table(multi-row-columns-spanning).png" alt="Original Image"></td>
             </tr>
         </tbody>
     </table>
 </body>
 </html>
 
-> blue: columns;
-> red: row;
-> gold: row header;
+* blue: columns; 
+* red: row;
+* gold: row header;
+* cyan: cell spanning
 
 
 

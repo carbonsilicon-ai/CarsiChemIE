@@ -101,6 +101,11 @@ import string
 letters = string.ascii_lowercase ## 26个字符
 roman_num_list = [u"\u2163", u"\u2164", u"\u2165", u"\u2166", u"\u2167", u"\u2168", u"\u2169"] ## 罗马数字
 def get_index():
+    """随机生成化合物的索引标签
+
+    Returns:
+        result1 (str): _description_
+    """
     ## bracket_flag：是否已经添加括号
     bracket_flag = False
     result1 = ""
@@ -843,13 +848,24 @@ with open(os.path.join(main_dir, "chemistry_data", "FunctionalGroups.txt"), "r")
                 if len(line_list)==3:
                     abbre_dict[line_list[-1]] = line_list[0]
                     
-## 随机
-def generate_random_Chemistry_text(with_prefix=False):
+## 随机生成官能团的文本
+def generate_random_Chemistry_functional_group_text(with_prefix:bool=False):
+    """生成化学官能团文本
+
+    Args:
+        with_prefix (bool, optional): _description_. Defaults to False.
+
+    Returns:
+        chemtext (str): 
+    """
     chem_string = random.choice(list(abbre_dict.keys()))
+    ## 添加前缀
     if with_prefix:
         chem_string = "-" + chem_string
     i = 0
     chem_string_result = []
+    ## 为数字增加<sub></sub>，方便网页显示，
+    ## 比如'SO2Me'➡'SO<sub>2</sub>Me'
     while i < len(chem_string):
         if chem_string[i].isdigit():
             j = i + 1
@@ -863,7 +879,9 @@ def generate_random_Chemistry_text(with_prefix=False):
         else:
             chem_string_result.append(chem_string[i])
             i = i + 1
-    return "".join(chem_string_result)
+    
+    chemtext = "".join(chem_string_result)
+    return chemtext
     
             
 
@@ -899,7 +917,7 @@ def get_random_drug_name(capitalize=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--save_dir', default="table_11", help="保存文件的目录")
+    parser.add_argument('--save_dir', default="table_12", help="保存文件的目录")
     parser.add_argument('--with_multi', type=int, default=1, help="保存文件的目录")
     args = parser.parse_args()
 
@@ -955,55 +973,71 @@ if __name__ == "__main__":
     columns_list = [temp for temp in df_solvent.columns.tolist() if temp not in ["Molecule","canonical_smiles"]]
     unit_list = ["h","°C","10<sup>6<sup>cm/s","s", "%", "L/Kg","mg/Kg","min","ng/g", ""]
     for img_idx in tqdm(range(30000)):
+        ## 列数
         sample_columns_number = random.randint(2, 8)
-        if sample_columns_number>0:
-            new_columns_list = random.sample(columns_list, sample_columns_number)
-        else:
-            new_columns_list = []
+        new_columns_list = random.sample(columns_list, sample_columns_number)
         
+        ## 是否需要药品名
         is_with_drug_name = random.random()<0.5
+        capitalize = False
         if is_with_drug_name:
+            ## 是否对药品名进行大写
             capitalize = random.random()<0.5
         
-        is_block = random.random()<0.5
+        ## 表头的字体是否加粗
+        block_in_header = random.random()<0.5
         
-        plot_mode = random.choices([1, 2, 3], weights=[2,4,0])[0]#去掉mode3，交替方式
+        ## 画板模式
+        # plot_mode：第一列纯数字/文本模式
+        # plot_mode：第一列纯分子模式
+        # plot_mode：第一列分子和数字/文本交替模式
+        plot_mode = random.choices([1, 2, 3], weights=[2, 5, 1])[0]
         if plot_mode == 1:
             sample_number = random.randint(5, 75)
         elif plot_mode == 2:
-            sample_number = random.randint(10, 30)
+            sample_number = random.randint(2, 25)
         else:
-            sample_number = random.randint(10, 30)
+            sample_number = random.randint(5, 25)
         
         if plot_mode == 1:
+            # 是否为纯数字模式
             is_pure_num = random.random()<0.33
         if plot_mode == 2:
-            txt_length = sample_number // random.randint(2, 4)
+            ## 文本行的长度
+            number_text_row = sample_number // random.randint(2, 4)
         if plot_mode == 3:
+            ## 分子和文本开始的位置
             mol_offset = random.randint(0, 1)
         
         if  plot_mode in [2, 3]:
             with_prefix = random.random()>0.5
             with_drug_name = random.random()>0.5
-            
+        
+        ## 随机采样数据
         temp_df = df_solvent.sample(sample_number)
         temp_df = temp_df.reset_index(drop=True)
         new_df = pd.DataFrame()
-
+        
+        ## 选择一个参照的小分子用于填充
         mol_0 = df_solvent.loc[random.randint(0, len(df_solvent)-1), "Molecule"]
         use_mol_0 = False
-        # mol_size = random.choice([150, 100, 200])
+
+        ## 分子的图像尺寸
+        # mol_img_size = random.choice([150, 100, 200])
         if len(mol.GetAtoms())<=12:
             use_mol_0= random.random()<0.4
+        ## 如果use_mol_0为True，则用mol_0进行批量填充，模仿一些包好类似物的表格
         if use_mol_0:
-            mol_size = random.randint(30, 60)
+            mol_img_size = random.randint(30, 60)
         else:
-            mol_size = random.randint(40, 150)
+            mol_img_size = random.randint(40, 150)
         
+        ## 遍历采样的数据
         for _, idx in enumerate(temp_df.index):
             if is_with_drug_name is False:
                 new_idx: str = get_index()
-                if is_block:
+                ## 加粗
+                if block_in_header:
                     new_df.loc[_, "idx"] = "<b>"+new_idx+"</b>"
                 else:
                     new_df.loc[_, "idx"] = new_idx
@@ -1011,12 +1045,12 @@ if __name__ == "__main__":
             else:
                 new_idx: str =  get_random_drug_name(capitalize=False)
                 if random.random()<0.5:
-                    if is_block:
+                    if block_in_header:
                         new_df.loc[_, "mol"] = "<b>"+new_idx+"</b>"
                     else:
                         new_df.loc[_, "mol"] = new_idx
                 else:
-                    if is_block:
+                    if block_in_header:
                         new_df.loc[_, "R"] = "<b>"+new_idx+"</b>"
                     else:
                         new_df.loc[_, "R"] = new_idx
@@ -1047,8 +1081,8 @@ if __name__ == "__main__":
                             new_df.loc[_, column] = temp_df.loc[idx, column]
                         
             elif plot_mode == 2:
-                if _ < txt_length:
-                    temp_tex = generate_random_Chemistry_text(with_prefix=True)
+                if _ < number_text_row:
+                    temp_tex = generate_random_Chemistry_functional_group_text(with_prefix=True)
                     new_df.loc[_, "molecule"] = temp_tex
                 else:
                     if use_mol_0:
@@ -1066,10 +1100,10 @@ if __name__ == "__main__":
                             mol = df_compound.loc[_idx, "Molecule"]
                     try:
                         if use_mol_0:
-                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_size, angle=0)
+                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_img_size, angle=0)
                         else:
                             ## 随机角度
-                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_size)
+                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_img_size)
                         
                     except:
                         new_df.loc[_, "molecule"] = random.choice(["-","None","/"])
@@ -1100,14 +1134,14 @@ if __name__ == "__main__":
                             mol = df_compound.loc[_idx, "Molecule"]
                     try:
                         if use_mol_0:
-                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_size, angle=0)
+                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_img_size, angle=0)
                         else:
                             ## 随机角度
-                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_size)
+                            new_df.loc[_, "molecule"] = get_mol_image(mol, mol_img_size)
                     except:
                         new_df.loc[_, "molecule"] = random.choice(["-","None","/"])
                 else:
-                    temp_tex = generate_random_Chemistry_text(with_prefix)
+                    temp_tex = generate_random_Chemistry_functional_group_text(with_prefix)
                     new_df.loc[_, "molecule"] = temp_tex
         
                 for column in new_columns_list:
@@ -1119,63 +1153,53 @@ if __name__ == "__main__":
                     else:
                         new_df.loc[_, column] = temp_df.loc[idx, column]
         
-        
-        start_column_idx_list = []
-        if random.random()<-1 and plot_mode==1:
-            token = random.choice([""])
-            if random.random()<0.5 and (len(new_df.columns)-2)>0:
-                start_row_idx = random.randint(random.choice([len(new_df)//2, len(new_df)//3, len(new_df)//4]), len(new_df)-1)
-                if len(new_df.columns)-2 == 1 or len(new_df.columns)-2 == 2:
-                    start_column_idx_list = [len(new_df.columns)-1]
-                else:
-                    start_column_idx_list = random.sample([len(new_df.columns)-1, len(new_df.columns)-2, len(new_df.columns)-3], 2)
-                
-                for _ in new_df.index:
-                    if _ >= start_row_idx:
-                        for __ in start_column_idx_list:
-                            if random.random()<0.6:
-                                new_df.iloc[_, __] = token
-        
         if random.random()>0.75:
             mode = 0
         else:
             mode = 1
 
-        mol_idx = 1
+        mol_col_idx = 1
         columns = new_df.columns.to_list()
 
-        ##随机镂空
+        ## 随机镂空
+        for i in new_df.index:
+            for j in new_df.columns:
+                temp_prob = random.random()
+                if temp_prob<0.1:
+                    new_df.loc[i, j] = ""
 
-        temp_proba = random.random()
-        ## 保持原来的就行了
-        if temp_proba < 0.3:
-            pass
-        elif temp_proba < 0.6:
-            columns[0], columns[1] = columns[1], columns[0]
-            new_df = new_df[columns]
-            mol_idx = 0
-            
-        else:
-            count = 0
-            while count<50:
-                count = count + 1
-                random_indx = random.randint(0, len(columns)-1)
-                if random_indx in start_column_idx_list:
-                    continue
-                columns[random_indx], columns[mol_idx] = columns[mol_idx], columns[random_indx]
+                # elif temp_prob<0.15:
+                #     ## 分子的缩放尺度
+                #     if i > 2:
+                #         temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
+                #         new_df.loc[i, j] = get_mol_image(temp_mol, int(mol_img_size*1))
+
+        if plot_mode != 1:
+            ## 交换分子和其他列       
+            temp_proba = random.random()
+            ## 保持原来的就行了
+            if temp_proba < 0.4:
+                pass
+            elif temp_proba < 0.8:
+                columns[0], columns[1] = columns[1], columns[0]
                 new_df = new_df[columns]
-                mol_idx = random_indx
+                mol_col_idx = 0
+                
+            else:
+                count = 0
+                while count<50:
+                    count = count + 1
+                    random_indx = random.randint(0, len(columns)-1)
+                    columns[random_indx], columns[mol_col_idx] = columns[mol_col_idx], columns[random_indx]
+                    new_df = new_df[columns]
+                    mol_col_idx = random_indx
         
         
         # len_header = 1#new_df.columns[0]
         ## 表头的长度
         temp_columns = new_df.columns.to_list()
-        
-        
         nums_row, nums_col = new_df.shape
 
-        # print("table2html")
-        nums_row, nums_col = new_df.shape
         table_html = "<table>"
         flag_tbody = False
         bold_header = random.random()>0.5
@@ -1186,13 +1210,26 @@ if __name__ == "__main__":
             if plot_mode == 2:
                 width_percent = 100//(new_df.shape[1]+random_mol_part)+1
             else:
-                mol_idx = None
+                mol_col_idx = None
                 width_percent = 100//(new_df.shape[1])+1
         
         merge_dict = {}
         ignore_list = []
 
+        ## 表头的长度
         len_header = 1
+        ## 随机在表头添加分子
+        if plot_mode in [2,3]:
+            for i in new_df.index:
+                for j in new_df.columns:
+                    if i < len_header:
+                        temp_prob = random.random()
+                        if temp_prob<0.2:
+                            ## 分子的缩放尺度
+                            factor = max(random.choice([1, 1.5, 2, 2.5, 3]), 1)
+                            temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
+                            new_df.loc[i, j] = get_mol_image(temp_mol, int(mol_img_size*factor))
+
         for row_idx in range(nums_row):
             if len_header>0:
                 if row_idx==0:
@@ -1229,7 +1266,7 @@ if __name__ == "__main__":
                     else:
                         table_html += f'<td class="{css_class}" rowspan="{rowspan}" colspan="{colspan}">{cell_value}</td>'
                 else:
-                    if (col_idx != mol_idx): 
+                    if (col_idx != mol_col_idx): 
                         if row_idx<len_header:
                             if bold_header is False:
                                 table_html += f'<th class="{css_class}" rowspan="{rowspan}" colspan="{colspan}" style="width:{width_percent}%">{cell_value}</th>'
@@ -1258,9 +1295,10 @@ if __name__ == "__main__":
         
         table_html += "</table>"
 
-        pad = random.choices([1, random.randint(1, int(font_size*2))], weights=[2,10])[0]
+        ## 通用的pad
+        pad = random.randint(1, int(font_size*2))
 
-        if plot_mode == 2:
+        if plot_mode in [2, 3]:
             horizen_pad = random.randint(5, 50)
         else:
             horizen_pad = random.randint(5, 20)
@@ -1298,7 +1336,10 @@ if __name__ == "__main__":
         else:
             new_image = border_image
         
-        if len(extracted_tables) == 1:
+        ## 去除表格不能填满图片的数据
+        if len(extracted_tables) == 1 and \
+            ((extracted_tables[0].bbox.x1/new_image.width)+1-(extracted_tables[0].bbox.x2/new_image.width))<0.05 and \
+            ((extracted_tables[0].bbox.y1/new_image.height)+1-(extracted_tables[0].bbox.y2/new_image.height))<0.05:
             rights = []
             downs = []
             existed_box_dict = {}
