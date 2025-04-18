@@ -19,8 +19,8 @@ python labelme2moldetect --labelme_data_path save/dir/for/labelmefile --export_c
     </thead>
     <tbody>
         <tr>
-            <td><img src="image/moldect_ori.png" style="width: 50%; height: auto;"></td>
-            <td><img src="image/moldect_ori_plot.png" style="width: 50%; height: auto;"></td>
+            <td><img src="./image/moldect_ori.png" style="width: 50%; height: auto;"></td>
+            <td><img src="./image/moldect_ori_plot.png" style="width: 50%; height: auto;"></td>
         </tr>
     </tbody>
 </table>
@@ -30,7 +30,7 @@ python labelme2moldetect --labelme_data_path save/dir/for/labelmefile --export_c
 ## sythesis of the structure of `Markush Molecule` 
 ### workflow
 
-<img src="image/workflow_of_molecule_generation.png"></img>
+<img src="./image/workflow_of_molecule_generation.png"></img>
 
 * First, it generate random smiles using rdkit, and random add `extention` to smiles to generate the `CXSmiles` which is
 * Then, the `CXSmiles` is fed to CDK to generation of MolBlock of `Markush Structure`. 
@@ -98,48 +98,48 @@ result_dict (dict):
         <tbody>
             <tr>
                 <td>Normal Molecule</td>
-                <td><img src="image/normal_mol.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/normal_mol_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/normal_mol.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/normal_mol_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>Rgroup(dash)</td>
-                <td><img src="image/rgroup_type_2_dash.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/rgroup_type_2_dash_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_dash.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_dash_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>Rgroup(dash line)</td>
-                <td><img src="image/rgroup_type_2_wave_line.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/rgroup_type_2_wave_line_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_wave_line.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_wave_line_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>Rgroup(wave_line)</td>
-                <td><img src="image/rgroup_type_2_dash_line.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/rgroup_type_2_dash_line_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_dash_line.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/rgroup_type_2_dash_line_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>uncertainty_position_v1</td>
-                <td><img src="image/uncertainty_position_v1.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/uncertainty_position_v1_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v1.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v1_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>uncertainty_position_v1(indigo)</td>
-                <td><img src="image/uncertainty_position_v1_indigo.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/uncertainty_position_v1_indigo_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v1_indigo.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v1_indigo_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>uncertainty_position_v2</td>
-                <td><img src="image/uncertainty_position_v2.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/uncertainty_position_v2_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v2.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v2_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>uncertainty_position_v2(indigo)</td>
-                <td><img src="image/uncertainty_position_v2_indigo.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/uncertainty_position_v2_indigo_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v2_indigo.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/uncertainty_position_v2_indigo_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
             <tr>
                 <td>polymer</td>
-                <td><img src="image/polymer.png" style="width: 50%; height: auto;"></td>
-                <td><img src="image/polymer_plot.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/polymer.png" style="width: 50%; height: auto;"></td>
+                <td><img src="./image/polymer_plot.png" style="width: 50%; height: auto;"></td>
             </tr>
         </tbody>
     </table>
@@ -162,12 +162,12 @@ bad case in prediction of <a href="https://github.com/microsoft/table-transforme
     </thead>
     <tbody>
         <tr>
-            <td><img src="image/ori_table_image.png" alt="original Image"></td>
-            <td><img src="image/table_transformer_prediction_1.png" alt="Predition of table transformer"></td>
+            <td><img src="./image/ori_table_image.png" alt="original Image"></td>
+            <td><img src="./image/table_transformer_prediction_1.png" alt="Predition of table transformer"></td>
         </tr>
         <tr>
-            <td><img src="image/ori_table_image_2.png" alt="original Image"></td>
-            <td><img src="image/table_transformer_prediction_2.png"  alt="Predition of table transformer"></td>
+            <td><img src="./image/ori_table_image_2.png" alt="original Image"></td>
+            <td><img src="./image/table_transformer_prediction_2.png"  alt="Predition of table transformer"></td>
         </tr>
     </tbody>
 </table>
@@ -175,7 +175,7 @@ bad case in prediction of <a href="https://github.com/microsoft/table-transforme
 
 
 ### Workflow
-<img src="image/workflow_of_table_generation.png" style="width: 50%; height: 50%;">
+<img src="./image/workflow_of_table_generation.png" style="width: 50%; height: 50%;">
 
 * First, random generation of the html of table. 
 * Then, generation `bordered table` and `boderless table` with `wkhtmltox`
@@ -245,27 +245,27 @@ python syn_table_structure_complex.py #for complex table which contians complex 
         <tbody>
             <tr>
                 <td>Borderless Table</td>
-                <td><img src="image/borderless_table.png" alt="Original Image"></td>
-                <td><img src="image/borderless_table_label.png" alt="Prediction of Table Transformer"></td>
-                <td><img src="image/borderless_table.png" alt="Original Image"></td>
+                <td><img src="./image/borderless_table.png" alt="Original Image"></td>
+                <td><img src="./image/borderless_table_label.png" alt="Prediction of Table Transformer"></td>
+                <td><img src="./image/borderless_table.png" alt="Original Image"></td>
             </tr>
             <tr>
                 <td>Borderless Table (complex)</td>
-                <td><img src="image/borderless_table(multi-row-columns-ori).png" alt="Original Image"></td>
-                <td><img src="image/borderless_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
-                <td><img src="image/borderless_table(multi-row-columns-spanning).png" alt="Original Image"></td>
+                <td><img src="./image/borderless_table(multi-row-columns-ori).png" alt="Original Image"></td>
+                <td><img src="./image/borderless_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
+                <td><img src="./image/borderless_table(multi-row-columns-spanning).png" alt="Original Image"></td>
             </tr>
             <tr>
                 <td>Bordered Table</td>
-                <td><img src="image/border_table.png" alt="Original Image"></td>
-                <td><img src="image/border_table_label.png" alt="Prediction of Table Transformer"></td>
-                <td><img src="image/border_table.png" alt="Original Image"></td>
+                <td><img src="./image/border_table.png" alt="Original Image"></td>
+                <td><img src="./image/border_table_label.png" alt="Prediction of Table Transformer"></td>
+                <td><img src="./image/border_table.png" alt="Original Image"></td>
             </tr>
             <tr>
                 <td>Bordered Table (complex)</td>
-                <td><img src="image/bordered_table(multi-row-columns-ori).png" alt="Original Image"></td>
-                <td><img src="image/bordered_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
-                <td><img src="image/bordered_table(multi-row-columns-spanning).png" alt="Original Image"></td>
+                <td><img src="./image/bordered_table(multi-row-columns-ori).png" alt="Original Image"></td>
+                <td><img src="./image/bordered_table(multi-row-columns).png" alt="Prediction of Table Transformer"></td>
+                <td><img src="./image/bordered_table(multi-row-columns-spanning).png" alt="Original Image"></td>
             </tr>
         </tbody>
     </table>
