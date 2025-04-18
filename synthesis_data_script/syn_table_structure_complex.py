@@ -1155,17 +1155,18 @@ if __name__ == "__main__":
         len_header = random.choices([1, 2])[0]
 
         ## 随机在表头添加分子
-        for i in new_df.index:
-            for j in new_df.columns:
-                if i < len_header:
-                    temp_prob = random.random()
-                    if temp_prob<0.2:
-                        ## 分子的缩放尺度
-                        # factor = max(random.choice([1, 1.5, 2, 2.5, 3]), 1)
-                        # temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
-                        new_df.loc[i, j] = get_mol_image(mol_0, int(mol_img_size*1))
+        if plot_mode in [2,3]:
+            for i in new_df.index:
+                for j in new_df.columns:
+                    if i < len_header:
+                        temp_prob = random.random()
+                        if temp_prob<0.2:
+                            ## 分子的缩放尺度
+                            # factor = max(random.choice([1, 1.5, 2, 2.5, 3]), 1)
+                            # temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
+                            new_df.loc[i, j] = get_mol_image(mol_0, int(mol_img_size*1))
                 
-
+        ## 添加表头行到表格中
         temp_columns = new_df.columns.to_list()
         if len_header == 2:
             random_columns = [(((temp_columns[i], 
@@ -1177,7 +1178,6 @@ if __name__ == "__main__":
         elif len_header == 1:
             random_columns = temp_columns
 
-        ## 添加表头行到表格中
         new_temp_df = pd.DataFrame(random_columns).T
         new_temp_df.columns = new_df.columns.to_list()
         new_df = pd.concat([new_temp_df, new_df])

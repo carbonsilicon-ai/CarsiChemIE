@@ -1230,6 +1230,24 @@ if __name__ == "__main__":
                             temp_mol = df_compound.loc[random.randint(0, len(df_compound)-1), "Molecule"]
                             new_df.loc[i, j] = get_mol_image(temp_mol, int(mol_img_size*factor))
 
+        ## 添加表头
+        temp_columns = new_df.columns.to_list()
+        if len_header == 2:
+            random_columns = [(((temp_columns[i], 
+                                 random.choices(["result<br>(T)", "activity(kd)", "inhibition(%)", "IC<sub>50<sub>", "\u25B3T(°C)", "entry", r"%inhibition", "yeild", "Kd", "Ki",
+                                                "Result", "Actvity<br>(%s)"%(random.choice(["Ki","Kd","IC<sub>50<sub>"])), "Inhibition<br>(%)", "Entry", r"%Inhibition", "Yeild<br>(%)","ee(%)"],)[0])) ) for i in range(len(temp_columns))]
+            # new_columns = pd.MultiIndex.from_tuples(random_columns)
+            # new_df.columns = new_columns
+            
+        elif len_header == 1:
+            random_columns = temp_columns
+
+        ## 添加表头行到表格中
+        new_temp_df = pd.DataFrame(random_columns).T
+        new_temp_df.columns = new_df.columns.to_list()
+        new_df = pd.concat([new_temp_df, new_df])
+        new_df = new_df.reset_index(drop=True)
+
         for row_idx in range(nums_row):
             if len_header>0:
                 if row_idx==0:
