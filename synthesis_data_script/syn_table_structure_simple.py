@@ -983,8 +983,8 @@ if __name__ == "__main__":
     os.makedirs(save_dir, exist_ok=True)
     os.makedirs(os.path.join(save_dir, "vis"), exist_ok=True)
     os.makedirs(os.path.join(save_dir, "temp_dir"), exist_ok=True)
-    os.makedirs(os.path.join(save_dir, "img"), exist_ok=True)
-    os.makedirs(os.path.join(save_dir, "label"), exist_ok=True)
+    os.makedirs(os.path.join(save_dir, "images"), exist_ok=True)
+    os.makedirs(os.path.join(save_dir, "labels"), exist_ok=True)
     
     total_result = []
     df_solvent["Permeablity"] = ["%.2f/%.2f"%(random.random()*random.choice([0.1, 1, 10, 100, 100]), random.random()*random.choice([0.1, 1, 10, 100, 100])) for _ in range(len(df_solvent))]
@@ -1528,7 +1528,7 @@ if __name__ == "__main__":
                 # border_image.save("temp_table3.png")
                 # temp_new_image.save(os.path.join(save_dir,"vis",f"{img_idx}.png"))
             
-            save_path = os.path.join(save_dir,"img",f"{img_idx}.png")
+            save_path = os.path.join(save_dir,"images",f"{img_idx}.png")
             new_image.save(save_path)
             # vis_table(border_image, extracted_tables, os.path.join(save_dir,"vis",f"{img_idx}.png"))
             temp_dict = {
@@ -1560,7 +1560,7 @@ if __name__ == "__main__":
                 "images":total_result
             }
 
-            with open(os.path.join(save_dir,"label","total.json"), "w") as f:
+            with open(os.path.join(save_dir,"labels","total.json"), "w") as f:
                 f.write(json.dumps(last_result))
     
     ## this label https://huggingface.co/microsoft/table-transformer-structure-recognition/blob/main/config.json
@@ -1578,5 +1578,5 @@ if __name__ == "__main__":
         "images":total_result
     }
 
-    with open(os.path.join(save_dir,"label","total.json"), "w") as f:
+    with open(os.path.join(save_dir,"labels","total.json"), "w") as f:
         f.write(json.dumps(last_result))
