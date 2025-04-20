@@ -272,10 +272,11 @@ python syn_table_structure_complex.py #for complex table which contians complex 
 </body>
 </html>
 
-* blue: columns; 
-* red: row;
-* gold: row header;
-* cyan: cell spanning
+* black: `table`
+* blue: `table columns`; 
+* red: `table row`;
+* gold: `table column header`;
+* cyan: `table spanning cell`
 
 
 
