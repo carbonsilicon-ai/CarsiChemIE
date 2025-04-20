@@ -149,7 +149,7 @@ result_dict (dict):
 
 ## Systhesis of the structure of table
 
-## purpose
+<!-- ## purpose
 The main purpose of `Systhesis of the structure of table` is to inject the information of molecule structure to table, to hanle the bad case of recognization that spliting the molecule.
 
 bad case in prediction of <a href="https://github.com/microsoft/table-transformer">`table transformer`</a>.
@@ -170,7 +170,7 @@ bad case in prediction of <a href="https://github.com/microsoft/table-transforme
             <td><img src="./image/table_transformer_prediction_2.png"  alt="Predition of table transformer"></td>
         </tr>
     </tbody>
-</table>
+</table> -->
 
 
 
@@ -203,7 +203,7 @@ python syn_table_structure_complex.py #for complex table which contians complex 
 ### visualization
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centered Table with Images</title>
     <style>
@@ -230,7 +230,7 @@ python syn_table_structure_complex.py #for complex table which contians complex 
             width: 100px; /* Adjust the size as needed */
             height: auto;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <table>

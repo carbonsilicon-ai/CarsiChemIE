@@ -526,10 +526,24 @@ def draw_molecule(mol, size=384,
 
 def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:int=0):
     """"""
+    """为borderless的html增加css修饰
+
+    Args:
+        html_content (str): 原始的html, Defaults to "".
+        mode (int): 如果mode为0，则对单元格采用顶端对齐的操作; mode为1，则对单元格采用居中对齐；mode为2时，则对单元格采用底端对齐. Defaults to 0.
+        pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
+        horizen_pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
+
+    Returns:
+        html_content_with_css (str) : 增加css修饰后的html文件
+    """
+    
     if mode == 0:
         temp_string = "td {vertical-align: top;}"
-    else:
+    elif mode==1:
         temp_string = "td {vertical-align: middle;}"
+    elif mode==2:
+        temp_string = "td {vertical-align: bottom;}"
         
     if random.random()<0.75:
         temp_string += """
@@ -653,10 +667,25 @@ def get_borderless_html(html_content:str="", mode:int=0, pad:int=0, horizen_pad:
 
 
 def get_border_html(html_content, mode=0, pad=0, horizen_pad=0):
+    """为borderless的html增加css修饰
+
+    Args:
+        html_content (str): 原始的html, Defaults to "".
+        mode (int): 如果mode为0，则对单元格采用顶端对齐的操作; mode为1，则对单元格采用居中对齐；mode为2时，则对单元格采用底端对齐. Defaults to 0.
+        pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
+        horizen_pad (int, optional): 垂直pad的长度，建议>=2,否则img2table工具无法较好的识别. Defaults to 0.
+
+    Returns:
+        html_content_with_css (str) : 增加css修饰后的html文件
+    """
+    
     if mode == 0:
         temp_string = "td {vertical-align: top;}"
-    else:
+    elif mode==1:
         temp_string = "td {vertical-align: middle;}"
+    elif mode==2:
+        temp_string = "td {vertical-align: bottom;}"
+
     temp_string += """
         td {
             border-bottom: 1px solid black; /* 下边框 */
@@ -954,9 +983,9 @@ if __name__ == "__main__":
         if plot_mode == 1:
             sample_number = random.randint(5, 75)
         elif plot_mode == 2:
-            sample_number = random.randint(5, 25)
+            sample_number = random.randint(5, 20)
         else:
-            sample_number = random.randint(5, 25)
+            sample_number = random.randint(5, 20)
         
         if plot_mode == 1:
             is_pure_num = random.random()<0.33
@@ -1104,11 +1133,6 @@ if __name__ == "__main__":
                             new_df.loc[_, column] = temp_df.loc[idx, column]
                     else:
                         new_df.loc[_, column] = temp_df.loc[idx, column]
-        
-        if random.random()>0.75:
-            mode = 0
-        else:
-            mode = 1
 
         mol_col_idx = 1
         columns = new_df.columns.to_list()
@@ -1350,7 +1374,7 @@ if __name__ == "__main__":
                     continue
 
                 cell_value = new_df.iloc[row_idx, col_idx]
-                if cell_value is None or cell_value == "":
+                if cell_value is None:
                     cell_value = "None"
                 rowspan = "1"
                 colspan = "1"
@@ -1406,6 +1430,13 @@ if __name__ == "__main__":
         else:
             horizen_pad = random.randint(2, 10)
         
+        temp_mode_proba= random.random()
+        if temp_mode_proba<=0.4:
+            mode = 0
+        elif temp_mode_proba<=0.7:
+            mode = 1
+        else:
+            mode = 2
         border_table_html = get_border_html(table_html, mode, pad, horizen_pad)
         borderless_table_html = get_borderless_html(table_html, mode, pad, horizen_pad)
 
@@ -1434,7 +1465,7 @@ if __name__ == "__main__":
         
         extracted_tables = get_table_from_image(border_image)
 
-        if random.random()<0.85:
+        if random.random()<0.75:
             new_image = borderless_image
         else:
             new_image = border_image
@@ -1486,7 +1517,15 @@ if __name__ == "__main__":
                         {
                             "id": local_id,
                             "bbox": [x_min, y_min, x_max-x_min, y_max-y_min],
-                            "category_id": 4
+                            "category_id": 3
+                        }
+                    )
+                    ## row
+                    bboxes.append(
+                        {
+                            "id": local_id,
+                            "bbox": [x_min, y_min, x_max-x_min, y_max-y_min],
+                            "category_id": 2
                         }
                     )
                 else:
@@ -1608,14 +1647,7 @@ if __name__ == "__main__":
 
             with open(os.path.join(save_dir,"label","total.json"), "w") as f:
                 f.write(json.dumps(last_result))
-            
-            
     
-    last_result =  {
-        "categories": [{"id": 1, "name": "row"}, {"id": 2, "name": "columns"}, {"id": 3, "name": "span"}], 
-        "licenses": [{"name": "", "id": 0, "url": ""}],
-        "images":total_result
-    }
     
     ## this label https://huggingface.co/microsoft/table-transformer-structure-recognition/blob/main/config.json
     last_result =  {
