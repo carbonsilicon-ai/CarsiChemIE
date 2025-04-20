@@ -278,6 +278,8 @@ python syn_table_structure_complex.py #for complex table which contians complex 
 * gold: `table column header`;
 * cyan: `table spanning cell`
 
+> `table projected row header` is not systhsized because it rarely appears in table.Below is the case of `table projected row header` in <a href=https://huggingface.co/datasets/bsmock/pubtables-1m>**pubtables-1m**</a>:<img src="./image/tabel_row_project.png" alt="tabel_row_project in pubtables-1m">
+
 
 
 ## Systhesis of the detetion of table
